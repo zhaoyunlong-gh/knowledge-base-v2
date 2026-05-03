@@ -230,21 +230,20 @@ Respond with this exact JSON structure (replace values only):
 
                 tags = ["machine-learning", "deep-learning"]
                 if tags_match:
-                    tags_str = tags_match.group(1)
-                    if tags_str:
-                        # Handle both single tags and comma-separated tags
-                        try:
+                    try:
+                        tags_str = tags_match.group(1)
+                        if tags_str and len(tags_str) > 0:
                             if ',' in tags_str:
                                 tags = [t.strip() for t in tags_str.split(',') if t.strip()]
                             else:
-                                # Try to extract quoted strings
                                 extracted = re.findall(r'"([^"]*)"', tags_str)
                                 if extracted:
                                     tags = [t.strip() for t in extracted if t.strip()]
-                        except Exception:
-                            pass
-                        if not tags:
-                            tags = ["machine-learning", "deep-learning"]
+                            if not tags:
+                                tags = ["machine-learning", "deep-learning"]
+                    except Exception as e:
+                        print(f"[ModelClient] Error parsing tags: {e}")
+                        tags = ["machine-learning", "deep-learning"]
 
                 result = {
                     "summary": summary[:200] if summary else "GitHub repository",
@@ -256,68 +255,18 @@ Respond with this exact JSON structure (replace values only):
                         "community_heat": 5.0,
                         "domain_match": 5.0
                     },
-                    "tags": tags[:5]
+                    "tags": tags[:5] if tags else ["machine-learning", "deep-learning"]
                 }
                 print(f"[ModelClient] Created minimal valid JSON from extracted values")
-            else:
-                raise ValueError(f"No valid JSON found in response")
-        except json.JSONDecodeError as e:
-            print(f"[ModelClient] JSON parse failed: {e}")
-            print(f"[ModelClient] Attempting fallback...")
 
-            # Try to fix by truncating at the last complete object
-            fixed = candidate.replace('\n', ' ').replace('\r', '')
-
-            # Try finding a valid complete JSON by progressively shortening
-            result = None
-            first_brace_local = cleaned.find('{', 300)
-            for truncate_at in range(len(fixed), first_brace_local, -1):
-                try:
-                    result = json.loads(fixed[:truncate_at])
-                    print(f"[ModelClient] Fallback succeeded with truncate_at={truncate_at}")
-                    break
-                except json.JSONDecodeError:
-                    continue
-
-            if result is None:
-                print(f"[ModelClient] Fallback failed, trying to fix truncated JSON...")
-                stripped = candidate.strip()
-                # Check if JSON appears truncated
-                if not stripped.endswith('}'):
-                    print(f"[ModelClient] JSON appears truncated, attempting to fix...")
-                    # Try adding closing braces
-                    for attempt in ['}', '}}', '}}}']:
-                        try_fix = stripped + attempt
-                        try:
-                            result = json.loads(try_fix)
-                            print(f"[ModelClient] Truncation fix succeeded with: {attempt}")
-                            break
-                        except:
-                            continue
-
-                if not result:
-                    print(f"[ModelClient] All fallbacks failed")
-                    print(f"[ModelClient] Candidate preview: {candidate[:500]}")
-                    raise ValueError(f"No valid JSON found in response")
-
-            # If we got here via fallback, validate and normalize
-            if all(k in result for k in ["summary", "relevance_score", "score_breakdown", "tags"]):
+                # Validate and normalize before returning
                 from datetime import datetime
-
-                score = result.get("relevance_score", 0.0)
-                if isinstance(score, (int, float)):
-                    if score > 1.0:
-                        score = score / 10.0
-                    result["relevance_score"] = max(0.0, min(1.0, score))
-
-                breakdown = result.get("score_breakdown", {})
-                for key in ["tech_depth", "practical_value", "timeliness", "community_heat", "domain_match"]:
-                    val = breakdown.get(key, 0.0)
-                    if isinstance(val, (int, float)) and val > 10.0:
-                        breakdown[key] = min(10.0, val)
-                result["score_breakdown"] = breakdown
+                if isinstance(result.get("relevance_score"), (int, float)):
+                    if result["relevance_score"] > 1.0:
+                        result["relevance_score"] = result["relevance_score"] / 10.0
+                    result["relevance_score"] = max(0.0, min(1.0, result["relevance_score"]))
 
                 result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
                 return result
-
-            raise ValueError(f"No valid JSON found in response")
+            else:
+                raise ValueError(f"No valid JSON found in response")
