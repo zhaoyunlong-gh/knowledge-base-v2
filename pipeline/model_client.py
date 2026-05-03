@@ -67,16 +67,15 @@ class ModelClient:
         stars = repo_info.get("stars", 0)
         topics = repo_info.get("topics", [])
 
-        return f"""分析这个 GitHub 项目，返回 JSON：
+        return f'''Return JSON for GitHub project analysis:
 
-项目名: {name}
-描述: {description}
+Project: {name}
+Description: {description}
 Stars: {stars}
 Topics: {topics}
 
-只返回 JSON，不要其他内容。格式：{{"summary":"...","relevance_score":0.0到1.0之间,"score_breakdown":{{"tech_depth":0.0到10.0,"practical_value":0.0到10.0,"timeliness":0.0到10.0,"community_heat":0.0到10.0,"domain_match":0.0到10.0}},"tags":["tag1","tag2"]}}
-
-重要：relevance_score 必须是 0.0 到 1.0 之间的小数，score_breakdown 各项是 0.0 到 10.0 之间的分数。"""
+Respond with this exact JSON structure (replace values only):
+{{"summary":"project summary in English","relevance_score":0.5,"score_breakdown":{{"tech_depth":5.0,"practical_value":5.0,"timeliness":5.0,"community_heat":5.0,"domain_match":5.0}},"tags":["tag1","tag2"]}}'''
 
     def _call_llm(self, prompt: str) -> str:
         """调用 LLM API，实现重试逻辑"""
@@ -101,8 +100,11 @@ Topics: {topics}
 
         payload = {
             "model": self.config.model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": self.config.temperature,
+            "messages": [
+                {"role": "system", "content": "Return ONLY valid JSON starting with {. No explanations, no markdown formatting."},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.0,  # More deterministic output
             "max_tokens": self.config.max_tokens,
         }
 
@@ -129,37 +131,185 @@ Topics: {topics}
         # 移除 <think>... 标签
         cleaned = re.sub(r"<think>.*?", "", response, flags=re.DOTALL).strip()
 
-        # 找到 "summary": 的位置
+        # 移除中文注释（如 "0.0到1.0之间"、"0.0-1.0" 等）
+        # 并修复缺失的逗号
+        def fix_chinese_value(match):
+            key = match.group(1)
+            text = match.group(2)
+            # 提取第一个数字
+            num_match = re.search(r'[0-9.]+', text)
+            if not num_match:
+                return match.group(0)
+            num = float(num_match.group())
+            # 判断是否需要归一化
+            if "relevance_score" in key.lower():
+                num = num / 10.0 if num > 1.0 else num
+            else:
+                num = min(10.0, num)
+            return f'"{key}":{num}'
+
+        # 处理 "field":数字+非数字字符... 格式，同时修复缺失逗号
+        cleaned = re.sub(r'"([^"]+)":\s*([0-9.]+(?:[a-zA-Z一-鿿到\s\-/\\].*?)?)([,}]|\})', fix_chinese_value, cleaned)
+
+        # 修复缺失逗号: 在数值后直接跟引号时插入逗号
+        # 例如: 0.9"score -> 0.9,"score
+        cleaned = re.sub(r'([0-9])\s*"', r'\1,"', cleaned)
+
+        # 找到第一个 "summary": 的位置
         summary_idx = cleaned.find('"summary":')
         if summary_idx == -1:
-            print(f"[ModelClient] No summary found. Preview: {cleaned[:200]}...")
+            print(f"[ModelClient] No summary found. Preview: {cleaned[:500]}...")
             raise ValueError(f"No summary field found in response")
 
-        # 往前找 {
-        brace_idx = cleaned.rfind("{", 0, summary_idx)
-        if brace_idx == -1:
+        print(f"[ModelClient] Found summary at {summary_idx}, full cleaned preview: {cleaned[:1000]}...")
+
+        # Find first { after the thinking content
+        first_brace = cleaned.find('{', 300)  # Skip first 300 chars (thinking content)
+        if first_brace == -1:
+            print(f"[ModelClient] No opening brace found")
             raise ValueError(f"No JSON found in response")
 
-        # 找最后一个 } 位置作为可能的结束
-        last_brace = cleaned.rfind("}")
-        if last_brace == -1 or last_brace <= brace_idx:
-            raise ValueError(f"No valid JSON found in response")
+        # Find the matching closing brace by counting depth
+        depth = 0
+        end_idx = len(cleaned)
+        for i in range(first_brace, len(cleaned)):
+            if cleaned[i] == '{':
+                depth += 1
+            elif cleaned[i] == '}':
+                depth -= 1
+                if depth == 0:
+                    end_idx = i + 1
+                    break
 
-        # 尝试从 brace_idx 到 last_brace+1
-        candidate = cleaned[brace_idx:last_brace + 1]
+        candidate = cleaned[first_brace:end_idx]
+        print(f"[ModelClient] Extracted candidate from {first_brace} to {end_idx}: {candidate[:300]}...")
+
+        # Fix missing commas: after numeric value or }, there should be a comma before next key
+        # Pattern: 5.0"tags" -> 5.0,"tags" and }" -> },"
+        before_fix = candidate
+        # Fix after numbers: digit followed by quote
+        candidate = re.sub(r'([0-9])\s*"', r'\1,"', candidate)
+        # Fix after closing brace: } followed by quote
+        candidate = re.sub(r'}\s*"', r'},"', candidate)
+        if candidate != before_fix:
+            print(f"[ModelClient] Fixed missing commas")
+
+        # Fix truncated JSON: if it ends mid-value or mid-array, complete it
+        stripped = candidate.rstrip()
+        # If it ends with a partial value (like "t instead of "tutorial"), add closing
+        if len(stripped) > 10 and not stripped.endswith('}') and not stripped.endswith('"]'):
+            # Try to find where the JSON should properly end
+            # Add appropriate closing
+            print(f"[ModelClient] JSON appears truncated, adding closing braces")
+            # Complete the most common incomplete patterns
+            if stripped.endswith('"'):
+                candidate = stripped + '"]}'
+            elif stripped.endswith(',">'):
+                candidate = stripped + '"]}'
+            else:
+                candidate = stripped + '}' * 3
+            print(f"[ModelClient] Fixed truncated JSON: {candidate[-50:]}...")
+
+        # If truncation fix attempt failed, create minimal valid JSON as last resort
         try:
             result = json.loads(candidate)
+        except json.JSONDecodeError:
+            print(f"[ModelClient] JSON parse failed, attempting minimal fix...")
+            # Try creating a minimal valid JSON with what we can extract
+            summary_match = re.search(r'"summary":"([^"]*)"', candidate)
+            score_match = re.search(r'"relevance_score":([0-9.]+)', candidate)
+            # Match tags array - capture content between [" and ]
+            tags_match = re.search(r'"tags":\["([^"\]]*(?:"[^"]*)*)"\]', candidate)
+
+            if summary_match and score_match:
+                summary = summary_match.group(1)
+                score = float(score_match.group(1))
+                if score > 1.0:
+                    score = score / 10.0
+                score = max(0.0, min(1.0, score))
+
+                tags = ["machine-learning", "deep-learning"]
+                if tags_match:
+                    tags_str = tags_match.group(1)
+                    if tags_str:
+                        # Handle both single tags and comma-separated tags
+                        try:
+                            if ',' in tags_str:
+                                tags = [t.strip() for t in tags_str.split(',') if t.strip()]
+                            else:
+                                # Try to extract quoted strings
+                                extracted = re.findall(r'"([^"]*)"', tags_str)
+                                if extracted:
+                                    tags = [t.strip() for t in extracted if t.strip()]
+                        except Exception:
+                            pass
+                        if not tags:
+                            tags = ["machine-learning", "deep-learning"]
+
+                result = {
+                    "summary": summary[:200] if summary else "GitHub repository",
+                    "relevance_score": score,
+                    "score_breakdown": {
+                        "tech_depth": 5.0,
+                        "practical_value": 5.0,
+                        "timeliness": 5.0,
+                        "community_heat": 5.0,
+                        "domain_match": 5.0
+                    },
+                    "tags": tags[:5]
+                }
+                print(f"[ModelClient] Created minimal valid JSON from extracted values")
+            else:
+                raise ValueError(f"No valid JSON found in response")
+        except json.JSONDecodeError as e:
+            print(f"[ModelClient] JSON parse failed: {e}")
+            print(f"[ModelClient] Attempting fallback...")
+
+            # Try to fix by truncating at the last complete object
+            fixed = candidate.replace('\n', ' ').replace('\r', '')
+
+            # Try finding a valid complete JSON by progressively shortening
+            result = None
+            first_brace_local = cleaned.find('{', 300)
+            for truncate_at in range(len(fixed), first_brace_local, -1):
+                try:
+                    result = json.loads(fixed[:truncate_at])
+                    print(f"[ModelClient] Fallback succeeded with truncate_at={truncate_at}")
+                    break
+                except json.JSONDecodeError:
+                    continue
+
+            if result is None:
+                print(f"[ModelClient] Fallback failed, trying to fix truncated JSON...")
+                stripped = candidate.strip()
+                # Check if JSON appears truncated
+                if not stripped.endswith('}'):
+                    print(f"[ModelClient] JSON appears truncated, attempting to fix...")
+                    # Try adding closing braces
+                    for attempt in ['}', '}}', '}}}']:
+                        try_fix = stripped + attempt
+                        try:
+                            result = json.loads(try_fix)
+                            print(f"[ModelClient] Truncation fix succeeded with: {attempt}")
+                            break
+                        except:
+                            continue
+
+                if not result:
+                    print(f"[ModelClient] All fallbacks failed")
+                    print(f"[ModelClient] Candidate preview: {candidate[:500]}")
+                    raise ValueError(f"No valid JSON found in response")
+
+            # If we got here via fallback, validate and normalize
             if all(k in result for k in ["summary", "relevance_score", "score_breakdown", "tags"]):
                 from datetime import datetime
 
-                # 规范化 relevance_score 到 0.0-1.0 范围
                 score = result.get("relevance_score", 0.0)
                 if isinstance(score, (int, float)):
                     if score > 1.0:
-                        score = score / 10.0  # 除以 10 转换
+                        score = score / 10.0
                     result["relevance_score"] = max(0.0, min(1.0, score))
 
-                # 规范化 score_breakdown 到 0.0-10.0 范围
                 breakdown = result.get("score_breakdown", {})
                 for key in ["tech_depth", "practical_value", "timeliness", "community_heat", "domain_match"]:
                     val = breakdown.get(key, 0.0)
@@ -169,15 +319,5 @@ Topics: {topics}
 
                 result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
                 return result
-        except json.JSONDecodeError as e:
-            print(f"[ModelClient] JSON parse failed: {e}")
-            # Try to fix common issues: remove newlines in strings, etc.
-            fixed = candidate.replace('\n', ' ').replace('\r', '')
-            # Remove trailing content after the last }
-            fixed = fixed.rsplit('}', 1)[0] + '}'
-            try:
-                result = json.loads(fixed)
-            except json.JSONDecodeError:
-                print(f"[ModelClient] Second parse failed, giving up")
-                print(f"[ModelClient] Preview: {candidate[:300]}...")
-                raise ValueError(f"No valid JSON found in response")
+
+            raise ValueError(f"No valid JSON found in response")

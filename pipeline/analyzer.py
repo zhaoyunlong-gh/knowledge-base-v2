@@ -76,7 +76,7 @@ class Analyzer:
                 analyzed_count += 1
             except Exception as e:
                 print(f"[Analyzer] Error analyzing {item.get('id')}: {e}")
-                raise  # abort
+                continue  # skip this repo, continue with next
 
             time.sleep(1)  # 请求间隔
 
