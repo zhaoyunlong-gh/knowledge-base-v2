@@ -86,8 +86,8 @@ def main():
     parser.add_argument(
         "--count",
         type=int,
-        default=50,
-        help="Number of repos to fetch. Default: 50",
+        default=10,
+        help="Number of repos to fetch. Default: 10",
     )
 
     args = parser.parse_args()

@@ -38,7 +38,7 @@ jobs:
         run: python hooks/validate_json.py knowledge/articles
 
       - name: Check Quality
-        run: python hooks/check_quality.py
+        run: python hooks/check_quality.py knowledge/articles
 
       - name: Commit results
         run: |
