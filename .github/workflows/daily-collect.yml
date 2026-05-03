@@ -35,7 +35,7 @@ jobs:
         run: python -m pipeline.run
 
       - name: Validate JSON
-        run: python hooks/validate_json.py
+        run: python hooks/validate_json.py knowledge/articles
 
       - name: Check Quality
         run: python hooks/check_quality.py
