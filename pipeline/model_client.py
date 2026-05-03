@@ -169,7 +169,15 @@ Topics: {topics}
 
                 result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
                 return result
-        except json.JSONDecodeError:
-            pass
-
-        raise ValueError(f"No valid JSON found in response")
+        except json.JSONDecodeError as e:
+            print(f"[ModelClient] JSON parse failed: {e}")
+            # Try to fix common issues: remove newlines in strings, etc.
+            fixed = candidate.replace('\n', ' ').replace('\r', '')
+            # Remove trailing content after the last }
+            fixed = fixed.rsplit('}', 1)[0] + '}'
+            try:
+                result = json.loads(fixed)
+            except json.JSONDecodeError:
+                print(f"[ModelClient] Second parse failed, giving up")
+                print(f"[ModelClient] Preview: {candidate[:300]}...")
+                raise ValueError(f"No valid JSON found in response")
