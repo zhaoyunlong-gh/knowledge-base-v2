@@ -140,35 +140,36 @@ Topics: {topics}
         if brace_idx == -1:
             raise ValueError(f"No JSON found in response")
 
-        # 从 brace_idx 开始，尝试不同的结束位置
-        for end_offset in range(1, len(cleaned) - brace_idx + 1):
-            end_pos = brace_idx + end_offset
-            candidate = cleaned[brace_idx:end_pos]
-            try:
-                result = json.loads(candidate)
-                if all(k in result for k in ["summary", "relevance_score", "score_breakdown", "tags"]):
-                    from datetime import datetime
+        # 找最后一个 } 位置作为可能的结束
+        last_brace = cleaned.rfind("}")
+        if last_brace == -1 or last_brace <= brace_idx:
+            raise ValueError(f"No valid JSON found in response")
 
-                    # 规范化 relevance_score 到 0.0-1.0 范围
-                    score = result.get("relevance_score", 0.0)
-                    if isinstance(score, (int, float)):
-                        if score > 1.0:
-                            score = score / 10.0  # 除以 10 转换
-                        result["relevance_score"] = max(0.0, min(1.0, score))
+        # 尝试从 brace_idx 到 last_brace+1
+        candidate = cleaned[brace_idx:last_brace + 1]
+        try:
+            result = json.loads(candidate)
+            if all(k in result for k in ["summary", "relevance_score", "score_breakdown", "tags"]):
+                from datetime import datetime
 
-                    # 规范化 score_breakdown 到 0.0-10.0 范围
-                    breakdown = result.get("score_breakdown", {})
-                    for key in ["tech_depth", "practical_value", "timeliness", "community_heat", "domain_match"]:
-                        val = breakdown.get(key, 0.0)
-                        if isinstance(val, (int, float)) and val > 10.0:
-                            breakdown[key] = min(10.0, val)
-                    result["score_breakdown"] = breakdown
+                # 规范化 relevance_score 到 0.0-1.0 范围
+                score = result.get("relevance_score", 0.0)
+                if isinstance(score, (int, float)):
+                    if score > 1.0:
+                        score = score / 10.0  # 除以 10 转换
+                    result["relevance_score"] = max(0.0, min(1.0, score))
 
-                    result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
-                    return result
-            except json.JSONDecodeError:
-                continue
+                # 规范化 score_breakdown 到 0.0-10.0 范围
+                breakdown = result.get("score_breakdown", {})
+                for key in ["tech_depth", "practical_value", "timeliness", "community_heat", "domain_match"]:
+                    val = breakdown.get(key, 0.0)
+                    if isinstance(val, (int, float)) and val > 10.0:
+                        breakdown[key] = min(10.0, val)
+                result["score_breakdown"] = breakdown
 
-        print(f"[ModelClient] Failed to parse. Brace at {brace_idx}, summary at {summary_idx}")
-        print(f"[ModelClient] Region: {cleaned[brace_idx:brace_idx + 300]}...")
+                result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
+                return result
+        except json.JSONDecodeError:
+            pass
+
         raise ValueError(f"No valid JSON found in response")
