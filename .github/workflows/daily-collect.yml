@@ -28,6 +28,9 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
 
+      - name: Clean articles
+        run: rm -f knowledge/articles/*.json
+
       - name: Run Pipeline
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
