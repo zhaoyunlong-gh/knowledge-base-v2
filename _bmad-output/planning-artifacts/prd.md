@@ -1,5 +1,5 @@
 ---
-stepsCompleted: ["step-01-init", "step-02-discovery", "step-02c-executive-summary", "step-03-success", "step-04-journeys", "step-05-domain-skipped", "step-06-innovation-skipped", "step-07-project-type", "step-08-scoping", "step-09-functional", "step-10-nonfunctional", "step-11-polish"]
+stepsCompleted: ["step-01-init", "step-02-discovery", "step-02c-executive-summary", "step-03-success", "step-04-journeys", "step-05-domain-skipped", "step-06-innovation-skipped", "step-07-project-type", "step-08-scoping"]
 inputDocuments: []
 workflowType: 'prd'
 classification:
@@ -114,6 +114,8 @@ classification:
 **关键路径：** 定时触发 → 数据入库 → 日志确认
 **失败场景：** API 限流 → 重试机制生效 → 记录失败原因
 
+---
+
 ### Journey 2: 数据消费者 — 浏览热点
 
 **角色：** 产品经理小李，想了解本周 AI 技术热点
@@ -125,6 +127,8 @@ classification:
 
 **关键路径：** 浏览 → 筛选 → 点击跳转
 **失败场景：** 数据去重不干净 → 重复内容 → 体验下降
+
+---
 
 ### Journey 3: 开发者 — 扩展数据源
 
@@ -148,14 +152,85 @@ classification:
 
 ---
 
+## API/数据采集管道 - 技术规格
+
+### 数据存储结构
+
+参考 GitHub Trending，数据格式：
+
+```json
+{
+  "source": "hacker-news",
+  "collected_at": "2026-05-12T10:00:00Z",
+  "query": "AI OR LLM OR agent",
+  "count": 50,
+  "items": [
+    {
+      "id": "hn-12345678",
+      "title": "Show HN: I built an AI agent that...",
+      "url": "https://news.ycombinator.com/item?id=12345678",
+      "points": 200,
+      "author": "username",
+      "created_at": "2026-05-12T08:30:00Z",
+      "comments": 45,
+      "signal_type": "hacker-news"
+    }
+  ]
+}
+```
+
+### 采集规格
+
+| 参数 | 值 |
+|---|---|
+| 采集频率 | 每日（与 GitHub Trending 同一调度） |
+| 批量大小 | 50 条 |
+| 存储位置 | `knowledge/raw/hacker-news-{date}.json` |
+| 关键词过滤 | `LLM, RAG, fine-tuning, agent, MCP` |
+
+### API 集成 - Algolia HN API
+
+**端点：** `https://hn.algolia.com/api/v1/search`
+
+**查询参数：**
+- `query`: `"AI OR LLM OR agent"`
+- `tags`: `"story"` (仅文章，不含评论)
+- `hitsPerPage`: `50`
+
+### 数据模型字段
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| id | string | HN 文章 ID |
+| title | string | 文章标题 |
+| url | string | HN 讨论链接 |
+| points | int | 获得的点数 |
+| author | string | 作者名 |
+| created_at | datetime | 发布时间 |
+| comments | int | 评论数 |
+| signal_type | string | 固定值 `"hacker-news"` |
+
+### 错误处理
+
+- API 限流：等待 1 秒后重试，最多 3 次
+- 采集失败：记录错误日志，不阻塞后续任务
+- 数据验证：检查必要字段，缺失则跳过
+
+---
+
 ## Project Scoping
 
-### Strategy
+### Strategy & Philosophy
 
 **Approach:** 单次发布，MVP + 明确的后续扩展路径
-**Resource:** 开发者 1 名，参考现有 pipeline 架构
+**Resource Requirements:** 开发者 1 名，参考现有 pipeline 架构
 
-### Feature Set
+### Complete Feature Set
+
+**Core User Journeys Supported:**
+- 系统运营者：每日定时采集 + 监控
+- 数据消费者：浏览 HN 热点文章
+- 开发者：扩展新的数据源
 
 **Must-Have (MVP):**
 - HN Algolia API 接入
@@ -181,131 +256,6 @@ classification:
 
 ---
 
-## Project-Type Requirements
-
-### 技术规格
-
-**数据存储：**
-
-```json
-{
-  "source": "hacker-news",
-  "collected_at": "2026-05-12T10:00:00Z",
-  "query": "AI OR LLM OR agent",
-  "count": 50,
-  "items": [
-    {
-      "id": "hn-12345678",
-      "title": "Show HN: I built an AI agent that...",
-      "url": "https://news.ycombinator.com/item?id=12345678",
-      "points": 200,
-      "author": "username",
-      "created_at": "2026-05-12T08:30:00Z",
-      "comments": 45,
-      "signal_type": "hacker-news"
-    }
-  ]
-}
-```
-
-**采集规格：**
-
-| 参数 | 值 |
-|---|---|
-| 采集频率 | 每日（与 GitHub Trending 同一调度） |
-| 批量大小 | 50 条 |
-| 存储位置 | `knowledge/raw/hacker-news-{date}.json` |
-| 关键词过滤 | `LLM, RAG, fine-tuning, agent, MCP` |
-
-**API 集成：**
-
-- **端点:** `https://hn.algolia.com/api/v1/search`
-- **参数:** `query="AI OR LLM OR agent"`, `tags="story"`, `hitsPerPage=50`
-
-**数据模型字段：**
-
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| id | string | HN 文章 ID |
-| title | string | 文章标题 |
-| url | string | HN 讨论链接 |
-| points | int | 获得的点数 |
-| author | string | 作者名 |
-| created_at | datetime | 发布时间 |
-| comments | int | 评论数 |
-| signal_type | string | 固定值 `"hacker-news"` |
-
-**错误处理：**
-
-- API 限流：等待 1 秒后重试，最多 3 次
-- 采集失败：记录错误日志，不阻塞后续任务
-- 数据验证：检查必要字段，缺失则跳过
-
----
-
 ## Functional Requirements
 
-### 数据采集能力
-
-- FR1: 系统可以触发 HN 数据采集任务
-- FR2: 系统可以按配置时间自动执行每日 HN 数据采集
-- FR3: 系统可以从 Algolia HN API 获取 AI 相关文章
-- FR4: 系统可以过滤只保留包含关键词的文章
-- FR5: 系统可以存储采集到的 HN 数据到 `knowledge/raw/hacker-news-{date}.json`
-
-### 数据去重能力
-
-- FR6: 系统可以识别 HN 数据中与现有 GitHub Trending 重复的内容
-- FR7: 系统可以将去重后的数据追加到原始数据文件
-
-### 数据格式标准化
-
-- FR8: 系统可以使用统一的数据模型存储 HN 文章
-- FR9: 系统可以为每条 HN 数据添加采集时间戳
-
-### 配置管理能力
-
-- FR10: 开发者可以在 `rss_sources.yaml` 中配置 HN 数据源参数
-- FR11: 开发者可以修改 HN 采集的关键词白名单
-
-### 错误处理能力
-
-- FR12: 系统可以在 Algolia API 限流时自动重试（最多 3 次）
-- FR13: 系统可以在采集失败时记录错误日志
-- FR14: 系统可以跳过缺失必要字段的数据而不终止采集任务
-
-### 可测试性
-
-- FR15: 开发者可以为 HN 采集器编写和运行测试桩
-- FR16: 系统可以通过模拟 Algolia API 响应进行单元测试
-
-### 定时任务集成
-
-- FR17: HN 采集任务可以与 GitHub Trending 采集任务使用同一调度周期
-- FR18: GitHub Actions 可以触发 HN 每日采集 workflow
-
-### 数据可读性
-
-- FR19: 数据消费者可以浏览 HN 热点文章列表
-- FR20: 数据消费者可以点击 HN 文章链接跳转到原始讨论
-
----
-
-## Non-Functional Requirements
-
-### Reliability
-
-- **采集成功率:** 每日采集任务成功率 ≥ 99%
-- **错误恢复:** API 限流时自动重试（最多 3 次），失败后记录日志不阻塞其他任务
-- **数据完整性:** 每次采集后验证数据字段完整性，缺失必要字段时跳过并记录
-
-### Integration
-
-- **Pipeline 兼容性:** HN 采集器复用现有 `collector.py` 架构，不破坏现有 GitHub Trending 采集流程
-- **定时调度:** HN 采集与 GitHub Trending 使用相同调度周期（每日一次）
-- **配置管理:** HN 数据源配置在 `rss_sources.yaml`，不硬编码 URL 或 API 密钥
-
-### Observability
-
-- **日志记录:** 采集任务开始/成功/失败时记录明确日志
-- **状态可查:** 每次采集更新 `collected_at` 时间戳，便于追踪采集状态
+（待 Step 9 定义）
