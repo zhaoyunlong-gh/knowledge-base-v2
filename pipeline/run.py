@@ -46,23 +46,41 @@ def run_pipeline(date: str = None, count: int = 50) -> int:
     print(f"[Pipeline] Date: {date or 'today'}, Count: {count}")
 
     try:
-        # Step 1: Collector
+        # Step 1: Collector - GitHub Trending
         print("\n=== Collector ===")
         collector = Collector()
         raw_file = collector.collect(count=count, date=date)
         print(f"[Collector] Raw file: {raw_file}")
 
+        # Step 1b: Hacker News Collector
+        print("\n=== HackerNews Collector ===")
+        from pipeline.hacker_news_collector import HackerNewsCollector
+        hn_collector = HackerNewsCollector()
+        hn_raw_file = hn_collector.collect(count=count, date=date)
+        if hn_raw_file:
+            print(f"[HackerNewsCollector] Raw file: {hn_raw_file}")
+
         # Step 2: Analyzer
         print("\n=== Analyzer ===")
         analyzer = Analyzer()
         analyzed_count = analyzer.analyze(raw_file)
-        print(f"[Analyzer] Analyzed {analyzed_count} repos")
+        print(f"[Analyzer] Analyzed {analyzed_count} repos from GitHub Trending")
+
+        # Analyze Hacker News data
+        if hn_raw_file:
+            hn_analyzed_count = analyzer.analyze(hn_raw_file)
+            print(f"[Analyzer] Analyzed {hn_analyzed_count} articles from Hacker News")
 
         # Step 3: Organizer
         print("\n=== Organizer ===")
         organizer = Organizer()
         article_count = organizer.organize(raw_file)
-        print(f"[Organizer] Created {article_count} articles")
+        print(f"[Organizer] Created {article_count} articles from GitHub Trending")
+
+        # Organize Hacker News data
+        if hn_raw_file:
+            hn_article_count = organizer.organize(hn_raw_file)
+            print(f"[Organizer] Created {hn_article_count} articles from Hacker News")
 
         print("\n[Pipeline] Completed successfully!")
         return 0

@@ -1,0 +1,11 @@
+# Hacker News 数据源配置
+hacker_news:
+  api_url: "https://hn.algolia.com/api/v1/search"
+  keywords:
+    - "LLM"
+    - "RAG"
+    - "fine-tuning"
+    - "agent"
+    - "MCP"
+  batch_size: 50
+  query: "AI OR LLM OR agent OR machine-learning"

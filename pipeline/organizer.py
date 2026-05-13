@@ -13,16 +13,31 @@ class Organizer:
         self.articles_dir.mkdir(parents=True, exist_ok=True)
         self.index_file = self.articles_dir / "index.json"
 
-    def generate_slug(self, repo_id: str) -> str:
-        """从 repo id 生成 slug
+    def generate_slug(self, item: dict) -> str:
+        """从 item 生成 slug
 
         Args:
-            repo_id: repo id，如 "openai/agents-sdk"
+            item: raw 文件中的 item
 
         Returns:
-            slug 字符串，如 "openai-agents-sdk"
+            slug 字符串，如 "fast-graphrag-better-rag" 或 "openai-agents-sdk"
         """
-        return repo_id.replace("/", "-")
+        item_id = item.get("id", "")
+
+        # HN items: 从标题生成 slug
+        if item_id.startswith("hn-"):
+            title = item.get("title", "")
+            # 移除 "Show HN: " / "Ask HN: " / "Launch HN: " 前缀
+            title = title.replace("Show HN: ", "").replace("Ask HN: ", "").replace("Launch HN: ", "")
+            # 转小写，只保留字母数字和空格
+            import re
+            slug = re.sub(r'[^a-zA-Z0-9\s]', '', title.lower())
+            # 用横线替换空格，并截断
+            slug = "-".join(slug.split())[:50]
+            return slug if slug else item_id
+
+        # GitHub items: 从 repo id 生成 slug
+        return item_id.replace("/", "-")
 
     def generate_id(self, date: str, seq: int) -> str:
         """生成 article id
@@ -47,14 +62,23 @@ class Organizer:
         Returns:
             article 字典
         """
-        slug = self.generate_slug(item["id"])
+        slug = self.generate_slug(item)
+
+        # 根据 signal_type 或 id 前缀确定 source
+        signal_type = item.get("signal_type", "")
+        if signal_type == "hacker-news":
+            source = "hacker-news"
+        elif item["id"].startswith("hn-"):
+            source = "hacker-news"
+        else:
+            source = "github-trending"
 
         article = {
             "id": self.generate_id(date, seq),
             "title": item.get("title", item["id"].split("/")[-1]),
-            "source": "github-trending",
+            "source": source,
             "source_id": item["id"],
-            "url": item.get("url", f"https://github.com/{item['id']}"),
+            "url": item.get("url", ""),
             "summary": item.get("summary", ""),
             "tags": item.get("tags", []),
             "relevance_score": item.get("relevance_score", 0.0),
@@ -158,7 +182,7 @@ class Organizer:
             if not item.get("analyzed_at"):
                 continue
 
-            slug = self.generate_slug(item["id"])
+            slug = self.generate_slug(item)
 
             # 检查是否重复
             if self.check_duplicate(slug):
