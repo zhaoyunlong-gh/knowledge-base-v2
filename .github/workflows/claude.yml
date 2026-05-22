@@ -28,4 +28,3 @@ jobs:
           anthropic_api_key: ${{ secrets.LLM_API_KEY }}
         env:
           ANTHROPIC_BASE_URL: ${{ secrets.LLM_BASE_URL }}
-          ANTHROPIC_MODEL: ${{ secrets.LLM_MODEL }}
