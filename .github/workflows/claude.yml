@@ -17,6 +17,7 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
+      id-token: write  # 👈 必须添加这一行，用于获取 OIDC 令牌以调用外部 API
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
