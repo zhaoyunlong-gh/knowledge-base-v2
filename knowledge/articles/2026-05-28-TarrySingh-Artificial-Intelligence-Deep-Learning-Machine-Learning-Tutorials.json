@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-05-27-004",
+  "id": "kb-2026-05-28-004",
   "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-  "summary": "A comprehensive educational repository containing curated tutorials and resources for Deep Learning, Artificial Intelligence, and Machine Learning. Covers diverse areas including machine vision, NLP, ",
+  "summary": "A curated collection of deep learning and machine learning tutorials covering major frameworks (TensorFlow, PyTorch, Keras), practical applications (NLP, Computer Vision), and expanding into industry ",
   "tags": [
-    "deep-learning\"",
-    "\"machine-learning\"",
+    "machine-learning\"",
+    "\"deep-learning\"",
     "\"tensorflow\"",
     "\"pytorch\"",
     "\"keras\""
   ],
-  "relevance_score": 0.89,
+  "relevance_score": 0.98,
   "collected_at": "2017-07-13T19:46:01Z",
-  "analyzed_at": "2026-05-27T02:00:54.296480Z",
-  "organized_at": "2026-05-27T02:02:22.441607Z",
+  "analyzed_at": "2026-05-28T01:45:34.310229Z",
+  "organized_at": "2026-05-28T01:46:36.641048Z",
   "status": "published"
 }
