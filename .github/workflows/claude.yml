@@ -21,9 +21,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          # 必须使用 GitHub App 的 token，否则无法触发后续的 CI 流程
-          token: ${{ secrets.GITHUB_TOKEN }} 
 
       - name: Configure Git User as Claude
         run: |
