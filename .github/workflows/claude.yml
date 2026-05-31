@@ -29,6 +29,13 @@ jobs:
           # 设置提交者邮箱（可以使用 Anthropic 官方提供的 noreply 邮箱）
           git config --global user.email "noreply@anthropic.com"
 
+      # 👇 增加这一步来验证当前环境的 Git 配置
+      - name: Verify Git Config
+        run: |
+          echo "Current Git User:"
+          git config user.name
+          git config user.email
+
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
         with:
