@@ -1,5 +1,6 @@
 """Article 整理器 - 将分析结果转换为 article 并维护索引"""
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
@@ -30,7 +31,6 @@ class Organizer:
             # 移除 "Show HN: " / "Ask HN: " / "Launch HN: " 前缀
             title = title.replace("Show HN: ", "").replace("Ask HN: ", "").replace("Launch HN: ", "")
             # 转小写，只保留字母数字和空格
-            import re
             slug = re.sub(r'[^a-zA-Z0-9\s]', '', title.lower())
             # 用横线替换空格，并截断
             slug = "-".join(slug.split())[:50]
@@ -62,22 +62,24 @@ class Organizer:
         Returns:
             article 字典
         """
+        item_id = item.get("id", "")
+        if not item_id:
+            raise ValueError(f"Item missing required 'id' field: {item}")
+
         slug = self.generate_slug(item)
 
         # 根据 signal_type 或 id 前缀确定 source
         signal_type = item.get("signal_type", "")
-        if signal_type == "hacker-news":
-            source = "hacker-news"
-        elif item["id"].startswith("hn-"):
+        if signal_type == "hacker-news" or item_id.startswith("hn-"):
             source = "hacker-news"
         else:
             source = "github-trending"
 
         article = {
             "id": self.generate_id(date, seq),
-            "title": item.get("title", item["id"].split("/")[-1]),
+            "title": item.get("title", item_id.split("/")[-1]),
             "source": source,
-            "source_id": item["id"],
+            "source_id": item_id,
             "url": item.get("url", ""),
             "summary": item.get("summary", ""),
             "tags": item.get("tags", []),
@@ -121,41 +123,6 @@ class Organizer:
         with open(self.index_file, "w", encoding="utf-8") as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
 
-    def check_duplicate(self, slug: str) -> bool:
-        """检查 slug 是否已存在
-
-        Args:
-            slug: slug 字符串
-
-        Returns:
-            是否已存在
-        """
-        index = self.load_index()
-        existing_slugs = {article["slug"] for article in index.get("articles", [])}
-        return slug in existing_slugs
-
-    def update_index(self, article: dict, slug: str) -> None:
-        """更新 index.json
-
-        Args:
-            article: article 字典
-            slug: slug 字符串
-        """
-        index = self.load_index()
-
-        # 添加到 articles 数组
-        index["articles"].append({
-            "id": article["id"],
-            "slug": slug,
-            "path": f"{article['organized_at'][:10]}-{slug}.json",
-        })
-
-        # 更新元数据
-        index["updated_at"] = datetime.utcnow().isoformat() + "Z"
-        index["count"] = len(index["articles"])
-
-        self.save_index(index)
-
     def organize_all(self, raw_file: str) -> int:
         """处理 raw 文件中所有已分析的 items
 
@@ -171,8 +138,9 @@ class Organizer:
         items = data.get("items", [])
         date = datetime.now().strftime("%Y-%m-%d")
 
-        # 获取当前 index 中的数量，用于序号
+        # 加载 index 一次，避免重复 I/O
         index = self.load_index()
+        existing_slugs = {article["slug"] for article in index.get("articles", [])}
         start_seq = index.get("count", 0) + 1
 
         article_count = 0
@@ -182,10 +150,15 @@ class Organizer:
             if not item.get("analyzed_at"):
                 continue
 
+            # 跳过缺少 id 的 item
+            if not item.get("id"):
+                print(f"[Organizer] Skipping item at index {i}: missing 'id' field")
+                continue
+
             slug = self.generate_slug(item)
 
-            # 检查是否重复
-            if self.check_duplicate(slug):
+            # 检查是否重复（使用内存中的 set，避免重复加载 index）
+            if slug in existing_slugs:
                 print(f"[Organizer] Skipping duplicate: {slug}")
                 continue
 
@@ -195,8 +168,20 @@ class Organizer:
             filepath = self.save_article(article, slug, date)
             print(f"[Organizer] Created {filepath}")
 
-            self.update_index(article, slug)
+            # 更新内存中的 index，批量写入
+            index["articles"].append({
+                "id": article["id"],
+                "slug": slug,
+                "path": f"{date}-{slug}.json",
+            })
+            existing_slugs.add(slug)
             article_count += 1
+
+        # 一次性更新并保存 index
+        if article_count > 0:
+            index["updated_at"] = datetime.utcnow().isoformat() + "Z"
+            index["count"] = len(index["articles"])
+            self.save_index(index)
 
         return article_count
 
