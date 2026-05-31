@@ -2,7 +2,7 @@
 import json
 import os
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -17,10 +17,9 @@ class Collector:
 
     def __init__(self, token: Optional[str] = None):
         self.token = token or os.environ.get("GITHUB_TOKEN")
-        self.headers = {
-            "Authorization": f"Bearer {self.token}" if self.token else "",
-            "Content-Type": "application/json",
-        }
+        self.headers = {"Content-Type": "application/json"}
+        if self.token:
+            self.headers["Authorization"] = f"Bearer {self.token}"
 
     def fetch_trending(self, count: int = 50) -> list:
         """获取 GitHub Trending 项目
@@ -70,6 +69,7 @@ class Collector:
         """发送 GraphQL 请求到 GitHub API"""
         url = "https://api.github.com/graphql"
 
+        last_error: Optional[Exception] = None
         for attempt in range(3):
             try:
                 response = requests.post(
@@ -89,9 +89,12 @@ class Collector:
                 return response.json()
 
             except requests.exceptions.RequestException as e:
+                last_error = e
                 if attempt == 2:
-                    raise RuntimeError(f"GitHub API request failed after 3 attempts: {e}")
+                    break
                 time.sleep(1)
+
+        raise RuntimeError(f"GitHub API request failed after 3 attempts: {last_error}")
 
     def format_repo(self, repo: dict) -> dict:
         """格式化 repo 数据结构"""
@@ -133,7 +136,7 @@ class Collector:
         else:
             data = {
                 "source": "github-trending",
-                "collected_at": datetime.utcnow().isoformat() + "Z",
+                "collected_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
                 "query": QUERY,
                 "count": len(items),
                 "items": [],
@@ -146,7 +149,7 @@ class Collector:
                 data["items"].append(item)
 
         data["count"] = len(data["items"])
-        data["collected_at"] = datetime.utcnow().isoformat() + "Z"
+        data["collected_at"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
         with open(raw_file, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
