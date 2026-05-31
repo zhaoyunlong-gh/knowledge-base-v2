@@ -13,8 +13,6 @@ on:
 jobs:
   claude:
     runs-on: ubuntu-latest
-    # 确保只有仓库成员或拥有写权限的人才能触发，防止恶意提交
-    if: ${{ github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER' || github.event_name == 'pull_request' }}
     permissions:
       contents: write
       pull-requests: write
