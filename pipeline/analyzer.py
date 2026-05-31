@@ -2,7 +2,6 @@
 import json
 import time
 from datetime import datetime
-from pathlib import Path
 from typing import Optional
 
 from pipeline.model_client import ModelClient
@@ -21,13 +20,17 @@ class Analyzer:
             repo_info: 包含 repo 信息的字典
 
         Returns:
-            包含分析结果的字典
+            包含分析结果的字典，保证含 analyzed_at 字段
         """
         try:
             result = self.model_client.analyze(repo_info)
-            return result
         except Exception as e:
             raise RuntimeError(f"Failed to analyze repo {repo_info.get('id', 'unknown')}: {e}")
+
+        # 保证 analyzed_at 存在，否则增量分析（analyze_all 跳过逻辑）会失效
+        if not result.get("analyzed_at"):
+            result["analyzed_at"] = datetime.utcnow().isoformat() + "Z"
+        return result
 
     def update_raw_with_insights(self, raw_file: str, repo_id: str, insights: dict) -> None:
         """将分析结果追加到 raw 文件中对应 item
@@ -68,17 +71,23 @@ class Analyzer:
             if item.get("analyzed_at"):
                 continue
 
-            print(f"[Analyzer] Analyzing {i + 1}/{len(items)}: {item.get('id', 'unknown')}")
+            item_id = item.get("id", "unknown")
+            print(f"[Analyzer] Analyzing {i + 1}/{len(items)}: {item_id}")
 
             try:
                 insights = self.analyze_repo(item)
-                self.update_raw_with_insights(raw_file, item["id"], insights)
+                item.update(insights)  # 原地更新，循环结束后统一落盘
                 analyzed_count += 1
             except Exception as e:
-                print(f"[Analyzer] Error analyzing {item.get('id')}: {e}")
+                print(f"[Analyzer] Error analyzing {item_id}: {e}")
                 continue  # skip this repo, continue with next
 
             time.sleep(1)  # 请求间隔
+
+        # 仅在有更新时写回一次，避免每条都全量读写 raw 文件
+        if analyzed_count > 0:
+            with open(raw_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
 
         return analyzed_count
 
