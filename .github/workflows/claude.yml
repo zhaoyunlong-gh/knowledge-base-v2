@@ -21,6 +21,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 必须使用 GitHub App 的 token，否则无法触发后续的 CI 流程
+          token: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: Configure Git User as Claude
+        run: |
+          # 设置提交者名称为 Claude
+          git config --global user.name "Claude"
+          # 设置提交者邮箱（可以使用 Anthropic 官方提供的 noreply 邮箱）
+          git config --global user.email "noreply@anthropic.com"
 
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
