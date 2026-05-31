@@ -4,7 +4,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-
 class Organizer:
     """将分析结果整理成 article 的整理器"""
 
