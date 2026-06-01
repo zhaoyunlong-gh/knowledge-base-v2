@@ -1,17 +1,17 @@
 {
-  "id": "kb-2026-05-31-013",
+  "id": "kb-2026-06-01-011",
   "title": "Show HN: AgentCanvas: Open-source canvas-style editor for ML developers",
   "source": "hacker-news",
   "source_id": "hn-43936472",
   "url": "https://github.com/Mai0313/AgentCanvas",
-  "summary": "No project information provided",
+  "summary": "Empty project repository with no description or content available for analysis.",
   "tags": [
     "machine-learning",
     "deep-learning"
   ],
-  "relevance_score": 0.0,
+  "relevance_score": 0.5,
   "collected_at": "2025-05-09T13:25:36Z",
-  "analyzed_at": "2026-05-31T02:03:21.395325Z",
-  "organized_at": "2026-05-31T02:03:22.400648Z",
+  "analyzed_at": "2026-06-01T02:12:18.730192Z",
+  "organized_at": "2026-06-01T02:12:19.734782Z",
   "status": "published"
 }
