@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-06-03-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "A foundational machine learning and deep learning educational repository covering core ML algorithms and neural network fundamentals. This beginner-friendly project provides hands-on implementations o",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"",
+    "\"neural-networks\"",
+    "\"python\"",
+    "\"beginner-friendly\""
+  ],
+  "relevance_score": 0.6,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-06-03T02:28:45.850992Z",
+  "organized_at": "2026-06-03T02:30:22.452854Z",
+  "status": "published"
+}
