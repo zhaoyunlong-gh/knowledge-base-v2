@@ -1,0 +1,369 @@
+{
+  "source": "github-trending",
+  "collected_at": "2026-06-04T02:25:59.121740+00:00",
+  "query": "AI OR LLM OR agent OR machine-learning OR deep-learning",
+  "count": 10,
+  "items": [
+    {
+      "id": "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "title": "500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "description": "500 AI Machine learning Deep learning Computer vision NLP Projects with code",
+      "url": "https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "stars": 34171,
+      "language": null,
+      "topics": [
+        "awesome",
+        "machine-learning",
+        "deep-learning",
+        "machine-learning-projects",
+        "deep-learning-project",
+        "computer-vision-project",
+        "nlp-projects",
+        "artificial-intelligence-projects",
+        "python",
+        "artificial-intelligence"
+      ],
+      "created_at": "2021-01-02T12:08:37Z",
+      "updated_at": "2026-06-04T02:23:36Z",
+      "summary": "A comprehensive curated collection of 500 artificial intelligence and machine learning projects featuring deep learning, computer vision, and NLP implementations with practical code examples, serving ",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning\"",
+        "\"deep-learning\"",
+        "\"computer-vision\"",
+        "\"nlp\"",
+        "\"artificial-intelligence"
+      ],
+      "analyzed_at": "2026-06-04T02:26:06.649723Z"
+    },
+    {
+      "id": "wepe/MachineLearning",
+      "title": "MachineLearning",
+      "description": "Basic Machine Learning and Deep Learning",
+      "url": "https://github.com/wepe/MachineLearning",
+      "stars": 5701,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2014-12-05T14:53:17Z",
+      "updated_at": "2026-06-03T08:45:55Z",
+      "summary": "A foundational repository covering essential machine learning and deep learning concepts with practical implementations. Provides clear examples for learning ML/DL fundamentals, suitable for beginners",
+      "relevance_score": 0.75,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning\"",
+        "\"deep-learning\"",
+        "\"neural-networks\"",
+        "\"python\"",
+        "\"data-science"
+      ],
+      "analyzed_at": "2026-06-04T02:26:11.218113Z"
+    },
+    {
+      "id": "kailashahirwar/cheatsheets-ai",
+      "title": "cheatsheets-ai",
+      "description": "Essential Cheat Sheets for deep learning and machine learning researchers https://medium.com/@kailashahirwar/essential-cheat-sheets-for-machine-learning-and-deep-learning-researchers-efb6a8ebd2e5",
+      "url": "https://github.com/kailashahirwar/cheatsheets-ai",
+      "stars": 15402,
+      "language": null,
+      "topics": [
+        "deep-learning",
+        "artificial-intelligence",
+        "machine-learning",
+        "keras",
+        "matplotlib",
+        "scipy",
+        "numpy"
+      ],
+      "created_at": "2017-05-24T12:06:56Z",
+      "updated_at": "2026-06-03T17:13:35Z",
+      "summary": "A comprehensive collection of essential cheat sheets for deep learning and machine learning researchers, covering key libraries and frameworks like Keras, NumPy, SciPy, and Matplotlib. This project pr",
+      "relevance_score": 0.95,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "deep-learning\"",
+        "\"machine-learning\"",
+        "\"cheat-sheets\"",
+        "\"keras\"",
+        "\"numpy\""
+      ],
+      "analyzed_at": "2026-06-04T02:26:15.998617Z"
+    },
+    {
+      "id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
+      "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
+      "description": "A comprehensive list of Deep Learning / Artificial Intelligence and Machine Learning tutorials - rapidly expanding into areas of AI/Deep Learning / Machine Vision / NLP and industry specific areas such as Climate / Energy, Automotives, Retail, Pharma, Medicine, Healthcare, Policy, Ethics and more.",
+      "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
+      "stars": 3994,
+      "language": "Python",
+      "topics": [
+        "machine-learning",
+        "deep-learning",
+        "tensorflow",
+        "python",
+        "pytorch",
+        "keras",
+        "lua",
+        "matplotlib",
+        "aws",
+        "kaggle"
+      ],
+      "created_at": "2017-07-13T19:46:01Z",
+      "updated_at": "2026-06-04T01:30:38Z",
+      "summary": "A comprehensive curated collection of Deep Learning, Artificial Intelligence, and Machine Learning tutorials covering frameworks like TensorFlow, PyTorch, and Keras. The project rapidly expands into s",
+      "relevance_score": 0.94,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "deep-learning\"",
+        "\"machine-learning\"",
+        "\"tensorflow\"",
+        "\"pytorch\"",
+        "\"keras"
+      ],
+      "analyzed_at": "2026-06-04T02:26:33.801664Z"
+    },
+    {
+      "id": "ujjwalkarn/Machine-Learning-Tutorials",
+      "title": "Machine-Learning-Tutorials",
+      "description": "machine learning and deep learning tutorials, articles and other resources ",
+      "url": "https://github.com/ujjwalkarn/Machine-Learning-Tutorials",
+      "stars": 17873,
+      "language": null,
+      "topics": [
+        "deep-learning-tutorial",
+        "machine-learning",
+        "machinelearning",
+        "deeplearning",
+        "neural-network",
+        "neural-networks",
+        "deep-neural-networks",
+        "awesome-list",
+        "awesome",
+        "list"
+      ],
+      "created_at": "2015-09-12T14:51:38Z",
+      "updated_at": "2026-06-04T01:21:55Z",
+      "summary": "A comprehensive machine learning and deep learning resource collection featuring tutorials, articles, and educational materials covering neural networks, deep learning frameworks, and ML algorithms. W",
+      "relevance_score": 0.85,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning\"",
+        "\"deep-learning\"",
+        "\"neural-networks\"",
+        "\"tutorials\"",
+        "\"resources"
+      ],
+      "analyzed_at": "2026-06-04T02:26:38.729545Z"
+    },
+    {
+      "id": "vivienzou1/DL-Notes-for-Interview",
+      "title": "DL-Notes-for-Interview",
+      "description": "deep learning/ machine learning",
+      "url": "https://github.com/vivienzou1/DL-Notes-for-Interview",
+      "stars": 374,
+      "language": null,
+      "topics": [],
+      "created_at": "2018-06-09T21:52:58Z",
+      "updated_at": "2026-05-25T17:07:18Z",
+      "summary": "A deep learning and machine learning project focused on developing neural network models and artificial intelligence algorithms for data analysis and prediction tasks",
+      "relevance_score": 0.7,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "deep-learning\"",
+        "\"machine-learning\"",
+        "\"neural-networks"
+      ],
+      "analyzed_at": "2026-06-04T02:26:47.610996Z"
+    },
+    {
+      "id": "aladdinpersson/Machine-Learning-Collection",
+      "title": "Machine-Learning-Collection",
+      "description": "A resource for learning about Machine learning & Deep Learning",
+      "url": "https://github.com/aladdinpersson/Machine-Learning-Collection",
+      "stars": 8448,
+      "language": "Python",
+      "topics": [
+        "pytorch",
+        "pytorch-implementation",
+        "pytorch-tutorial",
+        "pytorch-gan",
+        "pytorch-examples",
+        "tensorflow2",
+        "tensorflow-tutorials",
+        "tensorflow-examples",
+        "machine-learning",
+        "machine-learning-algorithms"
+      ],
+      "created_at": "2020-03-26T07:02:40Z",
+      "updated_at": "2026-06-02T14:22:56Z",
+      "summary": "Comprehensive machine learning and deep learning learning resource featuring PyTorch and TensorFlow2 implementations, tutorials, and examples covering ML algorithms, neural networks, and GANs with 8.4",
+      "relevance_score": 0.92,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "deep-learning\"",
+        "\"machine-learning\"",
+        "\"pytorch\"",
+        "\"tensorflow2",
+        "\""
+      ],
+      "analyzed_at": "2026-06-04T02:26:57.383560Z"
+    },
+    {
+      "id": "lutzroeder/netron",
+      "title": "netron",
+      "description": "Visualizer for neural network, deep learning and machine learning models",
+      "url": "https://github.com/lutzroeder/netron",
+      "stars": 33031,
+      "language": "JavaScript",
+      "topics": [
+        "neural-network",
+        "deep-learning",
+        "machine-learning",
+        "deeplearning",
+        "machinelearning",
+        "ai",
+        "ml",
+        "visualizer",
+        "onnx",
+        "keras"
+      ],
+      "created_at": "2010-12-26T12:53:43Z",
+      "updated_at": "2026-06-04T02:14:26Z",
+      "summary": "A comprehensive visualization tool for neural networks, deep learning and machine learning models that enables developers and researchers to understand, debug, and analyze model architectures. Support",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "neural-network\"",
+        "\"deep-learning\"",
+        "\"machine-learning\"",
+        "\"visualizer\"",
+        "\"keras\""
+      ],
+      "analyzed_at": "2026-06-04T02:27:01.333254Z"
+    },
+    {
+      "id": "Azure/MachineLearningNotebooks",
+      "title": "MachineLearningNotebooks",
+      "description": "Python notebooks with ML and deep learning examples with Azure Machine Learning Python SDK | Microsoft",
+      "url": "https://github.com/Azure/MachineLearningNotebooks",
+      "stars": 4402,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "machine-learning",
+        "notebook",
+        "azure",
+        "deep-learning",
+        "data-science",
+        "azure-machine-learning",
+        "azure-ml",
+        "azureml"
+      ],
+      "created_at": "2018-08-17T17:29:14Z",
+      "updated_at": "2026-06-04T01:29:02Z",
+      "summary": "Official Microsoft Azure Machine Learning Python SDK repository featuring comprehensive Jupyter notebooks for machine learning and deep learning examples. This production-ready project provides practi",
+      "relevance_score": 0.88,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning\"",
+        "\"deep-learning\"",
+        "\"azure\"",
+        "\"data-science\"",
+        "\"azure-machine-learning\""
+      ],
+      "analyzed_at": "2026-06-04T02:27:14.891837Z"
+    },
+    {
+      "id": "kmario23/deep-learning-drizzle",
+      "title": "deep-learning-drizzle",
+      "description": "Drench yourself in Deep Learning, Reinforcement Learning, Machine Learning, Computer Vision, and NLP by learning from these exciting lectures!!",
+      "url": "https://github.com/kmario23/deep-learning-drizzle",
+      "stars": 12816,
+      "language": "HTML",
+      "topics": [
+        "machine-learning",
+        "deep-learning",
+        "deep-neural-networks",
+        "pattern-recognition",
+        "computer-vision",
+        "optimization",
+        "visual-recognition",
+        "reinforcement-learning",
+        "deep-reinforcement-learning",
+        "natural-language-processing"
+      ],
+      "created_at": "2018-11-26T01:17:36Z",
+      "updated_at": "2026-06-01T16:10:50Z",
+      "summary": "A highly popular open-source educational repository featuring comprehensive lecture materials covering deep learning, reinforcement learning, machine learning, computer vision, and natural language pr",
+      "relevance_score": 0.92,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "deep-learning\"",
+        "\"machine-learning\"",
+        "\"reinforcement-learning\"",
+        "\"computer-vision\"",
+        "\"natural-language-processing"
+      ],
+      "analyzed_at": "2026-06-04T02:27:19.917723Z"
+    }
+  ]
+}
