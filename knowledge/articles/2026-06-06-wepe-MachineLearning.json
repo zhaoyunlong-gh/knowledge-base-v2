@@ -1,0 +1,17 @@
+{
+  "id": "kb-2026-06-06-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "Basic Machine Learning and Deep Learning project providing foundational implementations and examples for common ML and DL algorithms and techniques",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning"
+  ],
+  "relevance_score": 0.75,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-06-06T01:52:38.626131Z",
+  "organized_at": "2026-06-06T01:53:51.140985Z",
+  "status": "published"
+}
