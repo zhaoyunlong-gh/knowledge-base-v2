@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-06-10-006",
+  "id": "kb-2026-06-11-006",
   "title": "DL-Notes-for-Interview",
   "source": "github-trending",
   "source_id": "vivienzou1/DL-Notes-for-Interview",
   "url": "https://github.com/vivienzou1/DL-Notes-for-Interview",
-  "summary": "Machine learning and deep learning project with moderate community interest and standard development activity.",
+  "summary": "A machine learning and deep learning project focused on building intelligent systems and neural network models for various AI applications",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
-    "\"python\"",
+    "\"artificial-intelligence\"",
     "\"neural-networks\"",
-    "\"ai"
+    "\"python\""
   ],
   "relevance_score": 0.65,
   "collected_at": "2018-06-09T21:52:58Z",
-  "analyzed_at": "2026-06-10T02:00:39.045810Z",
-  "organized_at": "2026-06-10T02:01:43.534528Z",
+  "analyzed_at": "2026-06-11T02:13:17.788416Z",
+  "organized_at": "2026-06-11T02:14:27.770824Z",
   "status": "published"
 }
