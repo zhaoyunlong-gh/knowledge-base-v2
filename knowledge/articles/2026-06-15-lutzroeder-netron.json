@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-06-15-008",
+  "title": "netron",
+  "source": "github-trending",
+  "source_id": "lutzroeder/netron",
+  "url": "https://github.com/lutzroeder/netron",
+  "summary": "TensorFlow Playground is a visual interactive tool for learning and experimenting with neural networks, deep learning, and machine learning concepts directly in the browser. It allows users to visuali",
+  "tags": [
+    "neural-network\"",
+    "\"deep-learning\"",
+    "\"machine-learning\"",
+    "\"visualizer\"",
+    "\"keras\""
+  ],
+  "relevance_score": 0.85,
+  "collected_at": "2010-12-26T12:53:43Z",
+  "analyzed_at": "2026-06-15T02:15:09.764274Z",
+  "organized_at": "2026-06-15T02:15:38.729294Z",
+  "status": "published"
+}
