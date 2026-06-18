@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-06-18-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "Basic Machine Learning and Deep Learning project with educational focus, popular with over 5700 stars indicating strong community interest in ML fundamentals and neural network implementations",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"",
+    "\"neural-networks\"",
+    "\"python\"",
+    "\"artificial-intelligence"
+  ],
+  "relevance_score": 0.82,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-06-18T02:11:50.501882Z",
+  "organized_at": "2026-06-18T02:16:21.588230Z",
+  "status": "published"
+}

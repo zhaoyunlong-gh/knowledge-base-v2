@@ -1,0 +1,83 @@
+{
+  "source": "hacker-news",
+  "collected_at": "2026-06-18T02:11:24.852454Z",
+  "query": "AI OR LLM OR agent OR machine-learning",
+  "count": 3,
+  "items": [
+    {
+      "id": "hn-47151598",
+      "title": "Launch HN: TeamOut (YC W22) – AI agent for planning company retreats",
+      "url": "https://app.teamout.com/ai",
+      "points": 55,
+      "author": "vincentalbouy",
+      "created_at": "2026-02-25T14:02:02Z",
+      "comments": 61,
+      "signal_type": "hacker-news",
+      "summary": "GitHub project with no provided information. Unable to generate meaningful analysis without project details, description, stars, or topics.",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning",
+        "deep-learning"
+      ],
+      "analyzed_at": "2026-06-18T02:15:59.597401Z"
+    },
+    {
+      "id": "hn-42174829",
+      "title": "Show HN: FastGraphRAG – Better RAG using good old PageRank",
+      "url": "https://github.com/circlemind-ai/fast-graphrag",
+      "points": 457,
+      "author": "liukidar",
+      "created_at": "2024-11-18T17:43:13Z",
+      "comments": 119,
+      "signal_type": "hacker-news",
+      "summary": "No project data provided - unable to analyze",
+      "relevance_score": 0.0,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "machine-learning",
+        "deep-learning"
+      ],
+      "analyzed_at": "2026-06-18T02:16:10.641263Z"
+    },
+    {
+      "id": "hn-43936472",
+      "title": "Show HN: AgentCanvas: Open-source canvas-style editor for ML developers",
+      "url": "https://github.com/Mai0313/AgentCanvas",
+      "points": 1,
+      "author": "biolin",
+      "created_at": "2025-05-09T13:25:36Z",
+      "comments": 0,
+      "signal_type": "hacker-news",
+      "summary": "Empty repository with no description or content",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "placeholder\"",
+        "\"empty\"]}\n```\n\nWait",
+        "I need to think about this more carefully. The user said \"replace values only\" but the project description is empty. I should probably create a summary that reflects that it's an empty/placeholder repository.\n\nLet me provide appropriate values:\n- summary: Something about it being an empty or placeholder project\n- relevance_score: 0.5 (as specified)\n- All score_breakdown values: 5.0 (as specified)\n- tags: Some appropriate tags for an empty project\n\nI'll keep it simple and accurate to the input provided.\n</think>\n\n{\"summary\":\"Empty repository with no description provided\"",
+        "\"relevance_score\":0.5",
+        "\"score_breakdown\":{\"tech_depth\":5.0"
+      ],
+      "analyzed_at": "2026-06-18T02:16:20.586955Z"
+    }
+  ]
+}
