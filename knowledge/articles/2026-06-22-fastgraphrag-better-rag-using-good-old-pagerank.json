@@ -1,17 +1,17 @@
 {
-  "id": "kb-2026-06-21-012",
+  "id": "kb-2026-06-22-011",
   "title": "Show HN: FastGraphRAG – Better RAG using good old PageRank",
   "source": "hacker-news",
   "source_id": "hn-42174829",
   "url": "https://github.com/circlemind-ai/fast-graphrag",
-  "summary": "Empty repository with no description provided",
+  "summary": "GitHub project with no provided description, stars, or topics.",
   "tags": [
     "machine-learning",
     "deep-learning"
   ],
-  "relevance_score": 0.1,
+  "relevance_score": 0.5,
   "collected_at": "2024-11-18T17:43:13Z",
-  "analyzed_at": "2026-06-21T02:14:51.527828Z",
-  "organized_at": "2026-06-21T02:14:59.131709Z",
+  "analyzed_at": "2026-06-22T02:19:56.939647Z",
+  "organized_at": "2026-06-22T02:20:06.351692Z",
   "status": "published"
 }
