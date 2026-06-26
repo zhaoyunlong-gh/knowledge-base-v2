@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-06-26-003",
+  "title": "cheatsheets-ai",
+  "source": "github-trending",
+  "source_id": "kailashahirwar/cheatsheets-ai",
+  "url": "https://github.com/kailashahirwar/cheatsheets-ai",
+  "summary": "A comprehensive collection of cheat sheets for deep learning and machine learning researchers, providing quick reference guides for popular frameworks like Keras, NumPy, SciPy, and visualization tools",
+  "tags": [
+    "deep-learning\"",
+    "\"machine-learning\"",
+    "\"keras\"",
+    "\"numpy\"",
+    "\"scipy\""
+  ],
+  "relevance_score": 0.95,
+  "collected_at": "2017-05-24T12:06:56Z",
+  "analyzed_at": "2026-06-26T01:59:31.698191Z",
+  "organized_at": "2026-06-26T02:01:38.575161Z",
+  "status": "published"
+}
