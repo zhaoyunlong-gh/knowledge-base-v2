@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-06-30-003",
+  "title": "cheatsheets-ai",
+  "source": "github-trending",
+  "source_id": "kailashahirwar/cheatsheets-ai",
+  "url": "https://github.com/kailashahirwar/cheatsheets-ai",
+  "summary": "Essential Cheat Sheets is a highly popular open-source project providing quick reference guides for deep learning and machine learning researchers. The collection includes concise syntax and commands ",
+  "tags": [
+    "deep-learning\"",
+    "\"machine-learning\"",
+    "\"keras\"",
+    "\"numpy\"",
+    "\"scipy\""
+  ],
+  "relevance_score": 0.85,
+  "collected_at": "2017-05-24T12:06:56Z",
+  "analyzed_at": "2026-06-30T01:58:31.208066Z",
+  "organized_at": "2026-06-30T02:00:05.558133Z",
+  "status": "published"
+}
