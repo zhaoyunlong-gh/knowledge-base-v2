@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-07-14-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "A foundational machine learning and deep learning educational project with 5726 stars, providing essential implementations and tutorials for learning ML/DL concepts.",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"]}\n```\n\nThe relevance score should reflect that ML/DL is highly relevant and the project has significant community engagement. I'll set it to around 0.85 given the substantial star count and the importance of the domain.\n</think>\n\n{\"summary\":\"An educational machine learning and deep learning project with 5726 stars",
+    "offering fundamental implementations and tutorials for ML/DL concepts and algorithms.\"",
+    "\"relevance_score\":0.85",
+    "\"score_breakdown\":{\"tech_depth\":5.0"
+  ],
+  "relevance_score": 0.85,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-07-14T01:10:22.306560Z",
+  "organized_at": "2026-07-14T01:11:55.717618Z",
+  "status": "published"
+}

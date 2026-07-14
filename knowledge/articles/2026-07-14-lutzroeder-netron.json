@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-07-14-007",
+  "title": "netron",
+  "source": "github-trending",
+  "source_id": "lutzroeder/netron",
+  "url": "https://github.com/lutzroeder/netron",
+  "summary": "A powerful visualizer for neural network, deep learning and machine learning models. Supports ONNX, Keras, and various ML frameworks, enabling users to explore and analyze model architectures visually",
+  "tags": [
+    "neural-network\"",
+    "\"deep-learning\"",
+    "\"machine-learning\"",
+    "\"visualizer\"",
+    "\"onnx\""
+  ],
+  "relevance_score": 0.5,
+  "collected_at": "2010-12-26T12:53:43Z",
+  "analyzed_at": "2026-07-14T01:11:18.223405Z",
+  "organized_at": "2026-07-14T01:11:55.719301Z",
+  "status": "published"
+}
