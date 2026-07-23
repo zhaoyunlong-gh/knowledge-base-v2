@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-07-22-004",
+  "id": "kb-2026-07-23-004",
   "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-  "summary": "A curated collection of tutorials and resources covering deep learning, machine learning, artificial intelligence, and their applications across various industries including healthcare, automotive, re",
+  "summary": "A comprehensive collection of tutorials covering Deep Learning, Artificial Intelligence, and Machine Learning topics, including popular frameworks like TensorFlow, PyTorch, and Keras, with expansions ",
   "tags": [
     "deep-learning\"",
     "\"machine-learning\"",
-    "\"tensorflow\"",
-    "\"pytorch\"",
-    "\"keras\""
+    "\"artificial-intelligence\"",
+    "\"tutorials\"",
+    "\"tensorflow\""
   ],
-  "relevance_score": 0.92,
+  "relevance_score": 0.85,
   "collected_at": "2017-07-13T19:46:01Z",
-  "analyzed_at": "2026-07-22T01:16:20.661369Z",
-  "organized_at": "2026-07-22T01:18:01.031080Z",
+  "analyzed_at": "2026-07-23T01:23:40.452081Z",
+  "organized_at": "2026-07-23T01:24:52.889517Z",
   "status": "published"
 }
