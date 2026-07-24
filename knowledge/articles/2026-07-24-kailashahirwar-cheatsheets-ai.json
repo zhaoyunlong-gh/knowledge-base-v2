@@ -1,5 +1,5 @@
 {
-  "id": "kb-2026-07-23-003",
+  "id": "kb-2026-07-24-003",
   "title": "cheatsheets-ai",
   "source": "github-trending",
   "source_id": "kailashahirwar/cheatsheets-ai",
@@ -9,12 +9,12 @@
     "deep-learning\"",
     "\"machine-learning\"",
     "\"cheat-sheets\"",
-    "\"keras\"",
-    "\"numpy\""
+    "\"artificial-intelligence\"",
+    "\"keras\""
   ],
-  "relevance_score": 0.92,
+  "relevance_score": 1.0,
   "collected_at": "2017-05-24T12:06:56Z",
-  "analyzed_at": "2026-07-23T01:23:28.574028Z",
-  "organized_at": "2026-07-23T01:24:52.889189Z",
+  "analyzed_at": "2026-07-24T01:19:12.140418Z",
+  "organized_at": "2026-07-24T01:20:52.957331Z",
   "status": "published"
 }
