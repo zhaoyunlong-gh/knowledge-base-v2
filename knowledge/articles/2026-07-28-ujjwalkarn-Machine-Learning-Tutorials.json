@@ -1,10 +1,10 @@
 {
-  "id": "kb-2026-07-27-005",
+  "id": "kb-2026-07-28-005",
   "title": "Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "ujjwalkarn/Machine-Learning-Tutorials",
   "url": "https://github.com/ujjwalkarn/Machine-Learning-Tutorials",
-  "summary": "A comprehensive collection of machine learning and deep learning tutorials, articles, and resources covering neural networks, deep neural networks, and related ML topics. This popular repository serve",
+  "summary": "A comprehensive collection of machine learning and deep learning tutorials, articles, and resources covering neural networks, deep neural networks, and related topics. This popular repository serves a",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
@@ -14,7 +14,7 @@
   ],
   "relevance_score": 0.92,
   "collected_at": "2015-09-12T14:51:38Z",
-  "analyzed_at": "2026-07-27T01:28:06.395371Z",
-  "organized_at": "2026-07-27T01:29:49.315641Z",
+  "analyzed_at": "2026-07-28T01:15:14.948193Z",
+  "organized_at": "2026-07-28T01:16:49.384703Z",
   "status": "published"
 }
