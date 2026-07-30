@@ -1,18 +1,20 @@
 {
-  "id": "kb-2026-07-29-006",
+  "id": "kb-2026-07-30-006",
   "title": "DL-Notes-for-Interview",
   "source": "github-trending",
   "source_id": "vivienzou1/DL-Notes-for-Interview",
   "url": "https://github.com/vivienzou1/DL-Notes-for-Interview",
-  "summary": "A deep learning and machine learning project with moderate community interest (373 stars)",
+  "summary": "A deep learning and machine learning project with moderate community adoption and 373 stars.",
   "tags": [
     "deep-learning\"",
     "\"machine-learning\"",
-    "\"python"
+    "\"python\"",
+    "\"neural-networks\"",
+    "\"ai"
   ],
   "relevance_score": 0.75,
   "collected_at": "2018-06-09T21:52:58Z",
-  "analyzed_at": "2026-07-29T01:18:34.418666Z",
-  "organized_at": "2026-07-29T01:19:56.687366Z",
+  "analyzed_at": "2026-07-30T01:11:07.072404Z",
+  "organized_at": "2026-07-30T01:12:14.734400Z",
   "status": "published"
 }
