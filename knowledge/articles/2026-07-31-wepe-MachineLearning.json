@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-07-31-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "Basic Machine Learning and Deep Learning is an educational project that provides foundational implementations and tutorials for core ML and DL concepts, making it accessible for beginners to learn ess",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"",
+    "\"python\"",
+    "\"educational\"",
+    "\"neural-networks"
+  ],
+  "relevance_score": 0.75,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-07-31T01:23:20.799028Z",
+  "organized_at": "2026-07-31T01:25:42.899322Z",
+  "status": "published"
+}
