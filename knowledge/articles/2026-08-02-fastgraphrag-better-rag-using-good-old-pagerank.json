@@ -1,5 +1,5 @@
 {
-  "id": "kb-2026-08-01-012",
+  "id": "kb-2026-08-02-012",
   "title": "Show HN: FastGraphRAG – Better RAG using good old PageRank",
   "source": "hacker-news",
   "source_id": "hn-42174829",
@@ -9,9 +9,9 @@
     "machine-learning",
     "deep-learning"
   ],
-  "relevance_score": 0.5,
+  "relevance_score": 0.0,
   "collected_at": "2024-11-18T17:43:13Z",
-  "analyzed_at": "2026-08-01T01:26:20.769334Z",
-  "organized_at": "2026-08-01T01:26:28.121086Z",
+  "analyzed_at": "2026-08-02T01:24:12.019995Z",
+  "organized_at": "2026-08-02T01:24:18.745071Z",
   "status": "published"
 }
