@@ -1,10 +1,10 @@
 {
-  "id": "kb-2026-08-02-010",
+  "id": "kb-2026-08-03-010",
   "title": "deep-learning-drizzle",
   "source": "github-trending",
   "source_id": "kmario23/deep-learning-drizzle",
   "url": "https://github.com/kmario23/deep-learning-drizzle",
-  "summary": "This is a comprehensive educational repository featuring lectures on Deep Learning, Reinforcement Learning, Machine Learning, Computer Vision, and Natural Language Processing. With nearly 13,000 stars",
+  "summary": "A comprehensive educational repository offering lectures and resources on machine learning, deep learning, reinforcement learning, computer vision, and natural language processing. With nearly 13,000 ",
   "tags": [
     "deep-learning\"",
     "\"machine-learning\"",
@@ -12,9 +12,9 @@
     "\"computer-vision\"",
     "\"natural-language-processing\""
   ],
-  "relevance_score": 0.95,
+  "relevance_score": 0.5,
   "collected_at": "2018-11-26T01:17:36Z",
-  "analyzed_at": "2026-08-02T01:23:59.314237Z",
-  "organized_at": "2026-08-02T01:24:18.744065Z",
+  "analyzed_at": "2026-08-03T01:24:21.799112Z",
+  "organized_at": "2026-08-03T01:24:41.541724Z",
   "status": "published"
 }
