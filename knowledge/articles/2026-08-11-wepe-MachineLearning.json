@@ -1,0 +1,17 @@
+{
+  "id": "kb-2026-08-11-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "A machine learning and deep learning project providing foundational implementations and educational resources for ML/DL concepts.",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning"
+  ],
+  "relevance_score": 0.8,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-08-11T00:43:01.166959Z",
+  "organized_at": "2026-08-11T00:44:40.196435Z",
+  "status": "published"
+}
