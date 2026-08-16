@@ -1,5 +1,5 @@
 {
-  "id": "kb-2026-08-15-013",
+  "id": "kb-2026-08-16-013",
   "title": "Show HN: FastGraphRAG – Better RAG using good old PageRank",
   "source": "hacker-news",
   "source_id": "hn-42174829",
@@ -8,11 +8,13 @@
   "tags": [
     "tag1",
     "\"",
-    "\"tag2"
+    "\"tag2",
+    "\"]}\n\nI'll return something similar but appropriate for an empty project.\n</think>\n\n{\"summary\":\"No project data provided\"",
+    "\"relevance_score\":0.5"
   ],
   "relevance_score": 0.5,
   "collected_at": "2024-11-18T17:43:13Z",
-  "analyzed_at": "2026-08-15T00:29:58.233431Z",
-  "organized_at": "2026-08-15T00:30:03.657681Z",
+  "analyzed_at": "2026-08-16T00:30:26.415725Z",
+  "organized_at": "2026-08-16T00:30:33.579777Z",
   "status": "published"
 }
