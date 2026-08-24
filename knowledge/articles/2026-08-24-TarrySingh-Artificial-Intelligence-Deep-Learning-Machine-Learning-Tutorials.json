@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-08-23-004",
+  "id": "kb-2026-08-24-004",
   "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-  "summary": "Comprehensive curated collection of AI and Machine Learning tutorials covering deep learning, machine vision, NLP, and industry-specific applications in healthcare, climate, energy, automotive, retail",
+  "summary": "A curated collection of tutorials covering deep learning, artificial intelligence, and machine learning topics including neural networks, computer vision, NLP, and industry applications in healthcare,",
   "tags": [
-    "machine-learning\"",
-    "\"deep-learning\"",
+    "deep-learning\"",
+    "\"machine-learning\"",
     "\"artificial-intelligence\"",
-    "\"neural-networks\"",
+    "\"tutorials\"",
     "\"tensorflow\""
   ],
-  "relevance_score": 0.85,
+  "relevance_score": 0.92,
   "collected_at": "2017-07-13T19:46:01Z",
-  "analyzed_at": "2026-08-23T00:30:16.824202Z",
-  "organized_at": "2026-08-23T00:31:44.568858Z",
+  "analyzed_at": "2026-08-24T00:29:49.409824Z",
+  "organized_at": "2026-08-24T00:31:43.735290Z",
   "status": "published"
 }
