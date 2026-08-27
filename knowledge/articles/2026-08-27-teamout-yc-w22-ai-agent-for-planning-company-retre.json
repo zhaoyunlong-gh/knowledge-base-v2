@@ -1,17 +1,17 @@
 {
-  "id": "kb-2026-08-26-012",
+  "id": "kb-2026-08-27-012",
   "title": "Launch HN: TeamOut (YC W22) – AI agent for planning company retreats",
   "source": "hacker-news",
   "source_id": "hn-47151598",
   "url": "https://app.teamout.com/ai",
-  "summary": "No project information provided",
+  "summary": "No project information provided for analysis",
   "tags": [
-    "machine-learning",
-    "deep-learning"
+    "general\"",
+    "\"placeholder"
   ],
-  "relevance_score": 0.0,
+  "relevance_score": 0.5,
   "collected_at": "2026-02-25T14:02:02Z",
-  "analyzed_at": "2026-08-26T00:31:36.226277Z",
-  "organized_at": "2026-08-26T00:31:47.104698Z",
+  "analyzed_at": "2026-08-27T05:17:29.135043Z",
+  "organized_at": "2026-08-27T05:17:45.665659Z",
   "status": "published"
 }

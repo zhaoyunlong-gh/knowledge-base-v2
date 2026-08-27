@@ -1,0 +1,107 @@
+{
+  "source": "hacker-news",
+  "collected_at": "2026-08-27T05:15:17.665725Z",
+  "query": "AI OR LLM OR agent OR machine-learning",
+  "count": 4,
+  "items": [
+    {
+      "id": "hn-49169280",
+      "title": "Show HN: Guide AI coding agents on how to use libraries securely",
+      "url": "https://github.com/Reware-Labs/securitycards",
+      "points": 3,
+      "author": "hajipour",
+      "created_at": "2026-08-04T14:12:10Z",
+      "comments": 2,
+      "signal_type": "hacker-news",
+      "summary": "A GitHub project with no description provided.",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "unassigned\"",
+        "\"repository\"]}\n```\n\nWait",
+        "looking at the requirements more carefully:\n- The user says \"Replace values only\" for the template\n- The scores are all set to 5.0 which seems like a default/template value\n- The stars are 0 and topics are empty\n\nSince there's no actual project information provided",
+        "I'll create a neutral response that acknowledges the lack of information while still providing the requested structure with reasonable defaults.\n\nLet me provide a JSON response that:\n1. Has a summary acknowledging the empty project\n2. Uses a relevance score of 0.5 (the default/template value)\n3. Uses all 5.0 scores as shown in the template\n4. Uses minimal tags since no topics were provided\n</think>\n\n{\"summary\":\"GitHub project with no description or metadata provided.\"",
+        "\"relevance_score\":0.5"
+      ],
+      "analyzed_at": "2026-08-27T05:17:22.474349Z"
+    },
+    {
+      "id": "hn-47151598",
+      "title": "Launch HN: TeamOut (YC W22) – AI agent for planning company retreats",
+      "url": "https://app.teamout.com/ai",
+      "points": 55,
+      "author": "vincentalbouy",
+      "created_at": "2026-02-25T14:02:02Z",
+      "comments": 61,
+      "signal_type": "hacker-news",
+      "summary": "No project information provided for analysis",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "general\"",
+        "\"placeholder"
+      ],
+      "analyzed_at": "2026-08-27T05:17:29.135043Z"
+    },
+    {
+      "id": "hn-42174829",
+      "title": "Show HN: FastGraphRAG – Better RAG using good old PageRank",
+      "url": "https://github.com/circlemind-ai/fast-graphrag",
+      "points": 457,
+      "author": "liukidar",
+      "created_at": "2024-11-18T17:43:13Z",
+      "comments": 119,
+      "signal_type": "hacker-news",
+      "summary": "No project information provided for analysis",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "no-data\"",
+        "\"analysis-pending"
+      ],
+      "analyzed_at": "2026-08-27T05:17:36.698002Z"
+    },
+    {
+      "id": "hn-43936472",
+      "title": "Show HN: AgentCanvas: Open-source canvas-style editor for ML developers",
+      "url": "https://github.com/Mai0313/AgentCanvas",
+      "points": 1,
+      "author": "biolin",
+      "created_at": "2025-05-09T13:25:36Z",
+      "comments": 0,
+      "signal_type": "hacker-news",
+      "summary": "Project analysis requires specific repository information",
+      "relevance_score": 0.5,
+      "score_breakdown": {
+        "tech_depth": 5.0,
+        "practical_value": 5.0,
+        "timeliness": 5.0,
+        "community_heat": 5.0,
+        "domain_match": 5.0
+      },
+      "tags": [
+        "development\"",
+        "\"template"
+      ],
+      "analyzed_at": "2026-08-27T05:17:44.661850Z"
+    }
+  ]
+}

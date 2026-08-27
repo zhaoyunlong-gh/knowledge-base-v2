@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-08-27-011",
+  "title": "Show HN: Guide AI coding agents on how to use libraries securely",
+  "source": "hacker-news",
+  "source_id": "hn-49169280",
+  "url": "https://github.com/Reware-Labs/securitycards",
+  "summary": "A GitHub project with no description provided.",
+  "tags": [
+    "unassigned\"",
+    "\"repository\"]}\n```\n\nWait",
+    "looking at the requirements more carefully:\n- The user says \"Replace values only\" for the template\n- The scores are all set to 5.0 which seems like a default/template value\n- The stars are 0 and topics are empty\n\nSince there's no actual project information provided",
+    "I'll create a neutral response that acknowledges the lack of information while still providing the requested structure with reasonable defaults.\n\nLet me provide a JSON response that:\n1. Has a summary acknowledging the empty project\n2. Uses a relevance score of 0.5 (the default/template value)\n3. Uses all 5.0 scores as shown in the template\n4. Uses minimal tags since no topics were provided\n</think>\n\n{\"summary\":\"GitHub project with no description or metadata provided.\"",
+    "\"relevance_score\":0.5"
+  ],
+  "relevance_score": 0.5,
+  "collected_at": "2026-08-04T14:12:10Z",
+  "analyzed_at": "2026-08-27T05:17:22.474349Z",
+  "organized_at": "2026-08-27T05:17:45.665384Z",
+  "status": "published"
+}
