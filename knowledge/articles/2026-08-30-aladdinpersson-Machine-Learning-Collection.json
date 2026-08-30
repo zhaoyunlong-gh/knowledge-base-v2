@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-08-29-007",
+  "id": "kb-2026-08-30-007",
   "title": "Machine-Learning-Collection",
   "source": "github-trending",
   "source_id": "aladdinpersson/Machine-Learning-Collection",
   "url": "https://github.com/aladdinpersson/Machine-Learning-Collection",
-  "summary": "A highly popular and comprehensive open-source resource for learning Machine Learning and Deep Learning, featuring implementations in both PyTorch and TensorFlow with tutorials covering algorithms, GA",
+  "summary": "A comprehensive learning resource for Machine Learning and Deep Learning featuring PyTorch and TensorFlow 2 tutorials, implementations, and examples including GANs. This popular repository with 8,488 ",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
     "\"pytorch\"",
     "\"tensorflow\"",
-    "\"neural-networks\""
+    "\"tutorials\""
   ],
   "relevance_score": 0.95,
   "collected_at": "2020-03-26T07:02:40Z",
-  "analyzed_at": "2026-08-29T04:27:09.236767Z",
-  "organized_at": "2026-08-29T04:28:00.860903Z",
+  "analyzed_at": "2026-08-30T01:54:56.542812Z",
+  "organized_at": "2026-08-30T01:55:50.331987Z",
   "status": "published"
 }
