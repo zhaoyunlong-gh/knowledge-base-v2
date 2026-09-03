@@ -1,10 +1,10 @@
 {
-  "id": "kb-2026-09-02-001",
+  "id": "kb-2026-09-03-001",
   "title": "500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
   "source": "github-trending",
   "source_id": "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
   "url": "https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
-  "summary": "A comprehensive curated collection of 500 artificial intelligence and machine learning projects featuring deep learning, computer vision, and NLP implementations with code examples in Python",
+  "summary": "A comprehensive collection of 500 artificial intelligence, machine learning, deep learning, computer vision, and NLP projects with executable code, providing extensive practical examples for learning ",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
@@ -12,9 +12,9 @@
     "\"nlp\"",
     "\"artificial-intelligence\""
   ],
-  "relevance_score": 0.98,
+  "relevance_score": 0.92,
   "collected_at": "2021-01-02T12:08:37Z",
-  "analyzed_at": "2026-09-02T01:35:22.175840Z",
-  "organized_at": "2026-09-02T01:37:40.730430Z",
+  "analyzed_at": "2026-09-03T01:38:56.226548Z",
+  "organized_at": "2026-09-03T01:40:42.452637Z",
   "status": "published"
 }
