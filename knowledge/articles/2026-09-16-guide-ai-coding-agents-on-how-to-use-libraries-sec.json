@@ -1,5 +1,5 @@
 {
-  "id": "kb-2026-09-15-011",
+  "id": "kb-2026-09-16-011",
   "title": "Show HN: Guide AI coding agents on how to use libraries securely",
   "source": "hacker-news",
   "source_id": "hn-49169280",
@@ -9,9 +9,9 @@
     "machine-learning",
     "deep-learning"
   ],
-  "relevance_score": 0.0,
+  "relevance_score": 0.5,
   "collected_at": "2026-08-04T14:12:10Z",
-  "analyzed_at": "2026-09-15T02:04:20.012554Z",
-  "organized_at": "2026-09-15T02:04:43.674137Z",
+  "analyzed_at": "2026-09-16T01:55:27.646768Z",
+  "organized_at": "2026-09-16T01:55:58.430075Z",
   "status": "published"
 }
