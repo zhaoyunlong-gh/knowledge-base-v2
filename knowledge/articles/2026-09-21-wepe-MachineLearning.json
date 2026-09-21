@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-09-21-002",
+  "title": "MachineLearning",
+  "source": "github-trending",
+  "source_id": "wepe/MachineLearning",
+  "url": "https://github.com/wepe/MachineLearning",
+  "summary": "Basic Machine Learning and Deep Learning repository with 5767 stars",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"",
+    "\"python\"",
+    "\"neural-networks\"",
+    "\"tutorial"
+  ],
+  "relevance_score": 0.75,
+  "collected_at": "2014-12-05T14:53:17Z",
+  "analyzed_at": "2026-09-21T01:52:43.879642Z",
+  "organized_at": "2026-09-21T01:54:32.032510Z",
+  "status": "published"
+}
