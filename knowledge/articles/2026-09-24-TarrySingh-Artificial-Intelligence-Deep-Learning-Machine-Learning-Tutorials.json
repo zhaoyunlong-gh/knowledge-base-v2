@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-09-23-004",
+  "id": "kb-2026-09-24-004",
   "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-  "summary": "A curated collection of tutorials covering deep learning, artificial intelligence, machine learning, and their applications across industries including healthcare, automotive, retail, and climate. Inc",
+  "summary": "Synapsa Commons is a free, hands-on AI education platform featuring courses that run seamlessly across Colab, Kaggle, Binder, Codespaces, and Jupyter. The project provides practical training in machin",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
-    "\"tensorflow\"",
-    "\"pytorch\"",
-    "\"keras\""
+    "\"ai-governance\"",
+    "\"eu-ai-act\"",
+    "\"autograding\""
   ],
-  "relevance_score": 0.95,
+  "relevance_score": 0.5,
   "collected_at": "2017-07-13T19:46:01Z",
-  "analyzed_at": "2026-09-23T01:59:21.402674Z",
-  "organized_at": "2026-09-23T02:01:39.331045Z",
+  "analyzed_at": "2026-09-24T01:48:26.208201Z",
+  "organized_at": "2026-09-24T01:50:17.498513Z",
   "status": "published"
 }
