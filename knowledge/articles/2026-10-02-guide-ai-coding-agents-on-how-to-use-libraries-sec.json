@@ -1,17 +1,17 @@
 {
-  "id": "kb-2026-10-01-011",
+  "id": "kb-2026-10-02-011",
   "title": "Show HN: Guide AI coding agents on how to use libraries securely",
   "source": "hacker-news",
   "source_id": "hn-49169280",
   "url": "https://github.com/Reware-Labs/securitycards",
-  "summary": "No project information available",
+  "summary": "No project information provided",
   "tags": [
-    "general\"",
-    "\"template"
+    "machine-learning",
+    "deep-learning"
   ],
-  "relevance_score": 0.5,
+  "relevance_score": 0.0,
   "collected_at": "2026-08-04T14:12:10Z",
-  "analyzed_at": "2026-10-01T02:40:06.005969Z",
-  "organized_at": "2026-10-01T02:40:25.302227Z",
+  "analyzed_at": "2026-10-02T02:44:34.519730Z",
+  "organized_at": "2026-10-02T02:44:54.092670Z",
   "status": "published"
 }

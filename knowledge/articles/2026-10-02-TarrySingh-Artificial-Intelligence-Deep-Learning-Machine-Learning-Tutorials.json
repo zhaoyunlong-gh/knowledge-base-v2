@@ -1,20 +1,20 @@
 {
-  "id": "kb-2026-10-01-004",
+  "id": "kb-2026-10-02-002",
   "title": "Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "source": "github-trending",
   "source_id": "TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
   "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-  "summary": "Synapsa Commons provides free, hands-on AI courses that run anywhere (Colab, Kaggle, Binder, Codespaces, Jupyter) with every lesson autograded. Covers EU AI Act conformity evidence building, model val",
+  "summary": "Synapsa Commons is a free, open-source educational platform offering hands-on AI courses deployable across multiple environments (Colab, Kaggle, Binder, Codespaces, Jupyter). Covers EU AI Act conformi",
   "tags": [
     "machine-learning\"",
     "\"deep-learning\"",
-    "\"eu-ai-act\"",
-    "\"humanoid-robotics\"",
-    "\"autograding\""
+    "\"python\"",
+    "\"ai-governance\"",
+    "\"eu-ai-act\""
   ],
-  "relevance_score": 0.5,
+  "relevance_score": 0.92,
   "collected_at": "2017-07-13T19:46:01Z",
-  "analyzed_at": "2026-10-01T02:38:59.622775Z",
-  "organized_at": "2026-10-01T02:40:25.299102Z",
+  "analyzed_at": "2026-10-02T02:43:15.505966Z",
+  "organized_at": "2026-10-02T02:44:54.088071Z",
   "status": "published"
 }
