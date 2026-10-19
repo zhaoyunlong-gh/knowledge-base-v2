@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-10-19-009",
+  "title": "MachineLearningNotebooks",
+  "source": "github-trending",
+  "source_id": "Azure/MachineLearningNotebooks",
+  "url": "https://github.com/Azure/MachineLearningNotebooks",
+  "summary": "Official Microsoft Azure Machine Learning Python SDK examples and tutorials repository containing comprehensive Python notebooks for machine learning and deep learning workflows on Azure cloud platfor",
+  "tags": [
+    "azure-machine-learning\"",
+    "\"machine-learning\"",
+    "\"deep-learning\"",
+    "\"azure\"",
+    "\"data-science\""
+  ],
+  "relevance_score": 0.87,
+  "collected_at": "2018-08-17T17:29:14Z",
+  "analyzed_at": "2026-10-19T02:00:24.727426Z",
+  "organized_at": "2026-10-19T02:01:01.089347Z",
+  "status": "published"
+}
