@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-10-22-005",
+  "title": "netron",
+  "source": "github-trending",
+  "source_id": "lutzroeder/netron",
+  "url": "https://github.com/lutzroeder/netron",
+  "summary": "Netron is an open-source web and desktop application for visualizing neural network, deep learning, and machine learning models. It supports common model formats such as ONNX, Keras, TensorFlow Lite, ",
+  "tags": [
+    "neural-network\"",
+    "\"deep-learning\"",
+    "\"machine-learning\"",
+    "\"model-visualization\"",
+    "\"onnx\""
+  ],
+  "relevance_score": 0.96,
+  "collected_at": "2010-12-26T12:53:43Z",
+  "analyzed_at": "2026-10-22T02:05:00.218182Z",
+  "organized_at": "2026-10-22T02:05:46.461736Z",
+  "status": "published"
+}
