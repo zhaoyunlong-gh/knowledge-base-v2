@@ -1,5 +1,5 @@
 {
-  "id": "kb-2026-10-28-004",
+  "id": "kb-2026-10-29-004",
   "title": "Machine-Learning-Collection",
   "source": "github-trending",
   "source_id": "aladdinpersson/Machine-Learning-Collection",
@@ -9,12 +9,12 @@
     "machine-learning\"",
     "\"deep-learning\"",
     "\"pytorch\"",
-    "\"tensorflow\"",
-    "\"tutorials"
+    "\"tensorflow2",
+    "\""
   ],
-  "relevance_score": 0.94,
+  "relevance_score": 0.95,
   "collected_at": "2020-03-26T07:02:40Z",
-  "analyzed_at": "2026-10-28T02:43:33.849816Z",
-  "organized_at": "2026-10-28T02:43:58.478551Z",
+  "analyzed_at": "2026-10-29T03:02:07.823925Z",
+  "organized_at": "2026-10-29T03:02:45.579056Z",
   "status": "published"
 }

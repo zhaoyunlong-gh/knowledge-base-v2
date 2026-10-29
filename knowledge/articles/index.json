@@ -1,36 +1,46 @@
 {
-  "updated_at": "2026-10-28T02:43:58.479446Z",
-  "count": 6,
+  "updated_at": "2026-10-29T03:02:45.581126Z",
+  "count": 8,
   "articles": [
     {
-      "id": "kb-2026-10-28-001",
-      "slug": "ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
-      "path": "2026-10-28-ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code.json"
-    },
-    {
-      "id": "kb-2026-10-28-002",
+      "id": "kb-2026-10-29-001",
       "slug": "TarrySingh-Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-      "path": "2026-10-28-TarrySingh-Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials.json"
+      "path": "2026-10-29-TarrySingh-Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials.json"
     },
     {
-      "id": "kb-2026-10-28-003",
-      "slug": "vivienzou1-DL-Notes-for-Interview",
-      "path": "2026-10-28-vivienzou1-DL-Notes-for-Interview.json"
+      "id": "kb-2026-10-29-002",
+      "slug": "wepe-MachineLearning",
+      "path": "2026-10-29-wepe-MachineLearning.json"
     },
     {
-      "id": "kb-2026-10-28-004",
+      "id": "kb-2026-10-29-003",
+      "slug": "ujjwalkarn-Machine-Learning-Tutorials",
+      "path": "2026-10-29-ujjwalkarn-Machine-Learning-Tutorials.json"
+    },
+    {
+      "id": "kb-2026-10-29-004",
       "slug": "aladdinpersson-Machine-Learning-Collection",
-      "path": "2026-10-28-aladdinpersson-Machine-Learning-Collection.json"
+      "path": "2026-10-29-aladdinpersson-Machine-Learning-Collection.json"
     },
     {
-      "id": "kb-2026-10-28-005",
+      "id": "kb-2026-10-29-005",
       "slug": "lutzroeder-netron",
-      "path": "2026-10-28-lutzroeder-netron.json"
+      "path": "2026-10-29-lutzroeder-netron.json"
     },
     {
-      "id": "kb-2026-10-28-006",
-      "slug": "kmario23-deep-learning-drizzle",
-      "path": "2026-10-28-kmario23-deep-learning-drizzle.json"
+      "id": "kb-2026-10-29-006",
+      "slug": "Azure-MachineLearningNotebooks",
+      "path": "2026-10-29-Azure-MachineLearningNotebooks.json"
+    },
+    {
+      "id": "kb-2026-10-29-007",
+      "slug": "guide-ai-coding-agents-on-how-to-use-libraries-sec",
+      "path": "2026-10-29-guide-ai-coding-agents-on-how-to-use-libraries-sec.json"
+    },
+    {
+      "id": "kb-2026-10-29-008",
+      "slug": "teamout-yc-w22-ai-agent-for-planning-company-retre",
+      "path": "2026-10-29-teamout-yc-w22-ai-agent-for-planning-company-retre.json"
     }
   ]
 }
