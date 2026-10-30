@@ -1,46 +1,56 @@
 {
-  "updated_at": "2026-10-29T03:02:45.581126Z",
-  "count": 8,
+  "updated_at": "2026-10-30T03:08:01.328880Z",
+  "count": 10,
   "articles": [
     {
-      "id": "kb-2026-10-29-001",
-      "slug": "TarrySingh-Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
-      "path": "2026-10-29-TarrySingh-Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials.json"
+      "id": "kb-2026-10-30-001",
+      "slug": "ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "path": "2026-10-30-ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code.json"
     },
     {
-      "id": "kb-2026-10-29-002",
+      "id": "kb-2026-10-30-002",
       "slug": "wepe-MachineLearning",
-      "path": "2026-10-29-wepe-MachineLearning.json"
+      "path": "2026-10-30-wepe-MachineLearning.json"
     },
     {
-      "id": "kb-2026-10-29-003",
+      "id": "kb-2026-10-30-003",
+      "slug": "kailashahirwar-cheatsheets-ai",
+      "path": "2026-10-30-kailashahirwar-cheatsheets-ai.json"
+    },
+    {
+      "id": "kb-2026-10-30-004",
       "slug": "ujjwalkarn-Machine-Learning-Tutorials",
-      "path": "2026-10-29-ujjwalkarn-Machine-Learning-Tutorials.json"
+      "path": "2026-10-30-ujjwalkarn-Machine-Learning-Tutorials.json"
     },
     {
-      "id": "kb-2026-10-29-004",
+      "id": "kb-2026-10-30-005",
+      "slug": "vivienzou1-DL-Notes-for-Interview",
+      "path": "2026-10-30-vivienzou1-DL-Notes-for-Interview.json"
+    },
+    {
+      "id": "kb-2026-10-30-006",
       "slug": "aladdinpersson-Machine-Learning-Collection",
-      "path": "2026-10-29-aladdinpersson-Machine-Learning-Collection.json"
+      "path": "2026-10-30-aladdinpersson-Machine-Learning-Collection.json"
     },
     {
-      "id": "kb-2026-10-29-005",
-      "slug": "lutzroeder-netron",
-      "path": "2026-10-29-lutzroeder-netron.json"
-    },
-    {
-      "id": "kb-2026-10-29-006",
+      "id": "kb-2026-10-30-007",
       "slug": "Azure-MachineLearningNotebooks",
-      "path": "2026-10-29-Azure-MachineLearningNotebooks.json"
+      "path": "2026-10-30-Azure-MachineLearningNotebooks.json"
     },
     {
-      "id": "kb-2026-10-29-007",
+      "id": "kb-2026-10-30-008",
+      "slug": "kmario23-deep-learning-drizzle",
+      "path": "2026-10-30-kmario23-deep-learning-drizzle.json"
+    },
+    {
+      "id": "kb-2026-10-30-009",
       "slug": "guide-ai-coding-agents-on-how-to-use-libraries-sec",
-      "path": "2026-10-29-guide-ai-coding-agents-on-how-to-use-libraries-sec.json"
+      "path": "2026-10-30-guide-ai-coding-agents-on-how-to-use-libraries-sec.json"
     },
     {
-      "id": "kb-2026-10-29-008",
+      "id": "kb-2026-10-30-010",
       "slug": "teamout-yc-w22-ai-agent-for-planning-company-retre",
-      "path": "2026-10-29-teamout-yc-w22-ai-agent-for-planning-company-retre.json"
+      "path": "2026-10-30-teamout-yc-w22-ai-agent-for-planning-company-retre.json"
     }
   ]
 }
