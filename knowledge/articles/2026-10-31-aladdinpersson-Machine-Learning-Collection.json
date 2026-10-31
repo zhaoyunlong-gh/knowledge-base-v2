@@ -1,0 +1,20 @@
+{
+  "id": "kb-2026-10-31-007",
+  "title": "Machine-Learning-Collection",
+  "source": "github-trending",
+  "source_id": "aladdinpersson/Machine-Learning-Collection",
+  "url": "https://github.com/aladdinpersson/Machine-Learning-Collection",
+  "summary": "A curated learning resource for machine learning and deep learning, featuring tutorials, examples, and implementations for PyTorch and TensorFlow 2.",
+  "tags": [
+    "machine-learning\"",
+    "\"deep-learning\"",
+    "\"pytorch\"",
+    "\"tensorflow2",
+    "\""
+  ],
+  "relevance_score": 0.84,
+  "collected_at": "2020-03-26T07:02:40Z",
+  "analyzed_at": "2026-10-31T02:53:44.547291Z",
+  "organized_at": "2026-10-31T02:54:11.476094Z",
+  "status": "published"
+}
