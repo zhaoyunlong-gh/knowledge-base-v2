@@ -1,10 +1,10 @@
 {
-  "id": "kb-2026-10-31-008",
+  "id": "kb-2026-11-01-003",
   "title": "netron",
   "source": "github-trending",
   "source_id": "lutzroeder/netron",
   "url": "https://github.com/lutzroeder/netron",
-  "summary": "Netron is a desktop and web-based visualizer for inspecting neural network, deep learning, and machine learning models. It supports popular formats such as ONNX, Keras, TensorFlow, PyTorch, and TorchS",
+  "summary": "Netron is a popular graphical viewer for inspecting neural network, deep learning, and machine learning models. It supports formats such as ONNX and Keras, helping developers understand model architec",
   "tags": [
     "neural-network\"",
     "\"deep-learning\"",
@@ -14,7 +14,7 @@
   ],
   "relevance_score": 0.95,
   "collected_at": "2010-12-26T12:53:43Z",
-  "analyzed_at": "2026-10-31T02:53:48.576306Z",
-  "organized_at": "2026-10-31T02:54:11.476483Z",
+  "analyzed_at": "2026-11-01T02:46:29.128949Z",
+  "organized_at": "2026-11-01T02:46:50.734180Z",
   "status": "published"
 }
