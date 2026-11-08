@@ -1,36 +1,46 @@
 {
-  "updated_at": "2026-11-07T03:24:28.935143Z",
-  "count": 6,
+  "updated_at": "2026-11-08T02:53:05.194320Z",
+  "count": 8,
   "articles": [
     {
-      "id": "kb-2026-11-07-001",
+      "id": "kb-2026-11-08-001",
       "slug": "ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
-      "path": "2026-11-07-ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code.json"
+      "path": "2026-11-08-ashishpatel26-500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code.json"
     },
     {
-      "id": "kb-2026-11-07-002",
+      "id": "kb-2026-11-08-002",
+      "slug": "wepe-MachineLearning",
+      "path": "2026-11-08-wepe-MachineLearning.json"
+    },
+    {
+      "id": "kb-2026-11-08-003",
       "slug": "kailashahirwar-cheatsheets-ai",
-      "path": "2026-11-07-kailashahirwar-cheatsheets-ai.json"
+      "path": "2026-11-08-kailashahirwar-cheatsheets-ai.json"
     },
     {
-      "id": "kb-2026-11-07-003",
-      "slug": "vivienzou1-DL-Notes-for-Interview",
-      "path": "2026-11-07-vivienzou1-DL-Notes-for-Interview.json"
+      "id": "kb-2026-11-08-004",
+      "slug": "ujjwalkarn-Machine-Learning-Tutorials",
+      "path": "2026-11-08-ujjwalkarn-Machine-Learning-Tutorials.json"
     },
     {
-      "id": "kb-2026-11-07-004",
+      "id": "kb-2026-11-08-005",
       "slug": "aladdinpersson-Machine-Learning-Collection",
-      "path": "2026-11-07-aladdinpersson-Machine-Learning-Collection.json"
+      "path": "2026-11-08-aladdinpersson-Machine-Learning-Collection.json"
     },
     {
-      "id": "kb-2026-11-07-005",
+      "id": "kb-2026-11-08-006",
+      "slug": "lutzroeder-netron",
+      "path": "2026-11-08-lutzroeder-netron.json"
+    },
+    {
+      "id": "kb-2026-11-08-007",
       "slug": "Azure-MachineLearningNotebooks",
-      "path": "2026-11-07-Azure-MachineLearningNotebooks.json"
+      "path": "2026-11-08-Azure-MachineLearningNotebooks.json"
     },
     {
-      "id": "kb-2026-11-07-006",
-      "slug": "guide-ai-coding-agents-on-how-to-use-libraries-sec",
-      "path": "2026-11-07-guide-ai-coding-agents-on-how-to-use-libraries-sec.json"
+      "id": "kb-2026-11-08-008",
+      "slug": "teamout-yc-w22-ai-agent-for-planning-company-retre",
+      "path": "2026-11-08-teamout-yc-w22-ai-agent-for-planning-company-retre.json"
     }
   ]
 }
